@@ -138,6 +138,9 @@
   .intro-body p{ color:var(--muted); max-width:56ch; margin-top:20px; font-size:1rem;}
   .intro-media{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:44px;}
   .intro-media img{ width:100%; height:300px; object-fit:cover; border-radius:20px;}
+  .photo-strip{ grid-template-columns:repeat(4,1fr);}
+  .photo-strip.photo-strip-5{ grid-template-columns:repeat(5,1fr);}
+  .photo-strip img{ height:220px;}
   .stats-bar{
     margin-top:32px; background:var(--panel); border-radius:20px; padding:36px 20px;
     display:grid; grid-template-columns:repeat(4,1fr);
@@ -228,6 +231,7 @@
     .hero{ border-radius:22px; min-height:560px; padding-top:110px;}
     .float-cards{ grid-template-columns:1fr; padding:0 16px 24px; margin-top:36px;}
     .intro-media, .exp-cards, .included-grid{ grid-template-columns:1fr;}
+    .intro-media.photo-strip{ grid-template-columns:repeat(2,1fr);}
     .stats-bar{ grid-template-columns:1fr 1fr; row-gap:24px;}
     .stat:nth-child(3){ border-left:none;}
     .testimonial-section{ margin:0 16px; padding:56px 24px; border-radius:24px;}
@@ -388,11 +392,11 @@
         <span class="pip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span>
       </a>
     </div>
-    <div class="intro-media" style="grid-template-columns:repeat(4,1fr);">
-      <img src="img/gallery-1.jpg" alt="Habitación de Pikera Uri Eco Lodge con techo de vigas a la vista" style="height:220px;">
-      <img src="img/gallery-2.jpg" alt="Habitación de Pikera Uri Eco Lodge con dos camas" style="height:220px;">
-      <img src="img/gallery-4.jpg" alt="Habitación de Pikera Uri Eco Lodge" style="height:220px;">
-      <img src="img/gallery-3.jpg" alt="Baño de una habitación de Pikera Uri Eco Lodge" style="height:220px;">
+    <div class="intro-media photo-strip">
+      <img src="img/gallery-1.jpg" alt="Habitación de Pikera Uri Eco Lodge con techo de vigas a la vista">
+      <img src="img/gallery-2.jpg" alt="Habitación de Pikera Uri Eco Lodge con dos camas">
+      <img src="img/gallery-4.jpg" alt="Habitación de Pikera Uri Eco Lodge">
+      <img src="img/gallery-3.jpg" alt="Baño de una habitación de Pikera Uri Eco Lodge">
     </div>
   </div>
 </section>
@@ -459,11 +463,12 @@
         <h2 data-es="Un vistazo a Pikera Uri" data-en="A look at Pikera Uri" data-fr="Un aperçu de Pikera Uri">Un vistazo a Pikera Uri</h2>
       </div>
     </div>
-    <div class="intro-media" style="grid-template-columns:repeat(4,1fr);">
-      <img src="img/tahai-sunset.webp" alt="Moáis de Ahu Tahai al atardecer, a pasos de Pikera Uri Eco Lodge" style="height:220px;">
-      <img src="img/lodge-aerial.jpg" alt="Caballos junto al lodge de Pikera Uri al atardecer" style="height:220px;">
-      <img src="img/living-room.jpg" alt="Sala de estar de Pikera Uri Eco Lodge" style="height:220px;">
-      <img src="img/cabalgata.jpg" alt="Cabalgata guiada por Cabalgatas Pantu en Rapa Nui" style="height:220px;">
+    <div class="intro-media photo-strip photo-strip-5">
+      <img src="img/tahai-sunset.webp" alt="Moáis de Ahu Tahai al atardecer, a pasos de Pikera Uri Eco Lodge">
+      <img src="img/sunset-palm.jpg" alt="Jardín de Pikera Uri Eco Lodge al atardecer">
+      <img src="img/lodge-aerial.jpg" alt="Caballos junto al lodge de Pikera Uri al atardecer">
+      <img src="img/living-room.jpg" alt="Sala de estar de Pikera Uri Eco Lodge">
+      <img src="img/cabalgata.jpg" alt="Cabalgata guiada por Cabalgatas Pantu en Rapa Nui">
     </div>
   </div>
 </section>

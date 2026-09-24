@@ -140,14 +140,7 @@
   .intro-media img, .intro-media video{ width:100%; height:300px; object-fit:cover; border-radius:20px; display:block;}
   .photo-strip{ grid-template-columns:repeat(4,1fr);}
   .photo-strip.photo-strip-5{ grid-template-columns:repeat(5,1fr);}
-  .photo-strip img, .photo-strip video, .photo-strip .photo-frame{ height:220px;}
-  .photo-frame{ overflow:hidden; border-radius:20px; position:relative;}
-  .photo-frame img{ width:100%; height:100%; object-fit:cover; border-radius:0; display:block;}
-  .kb-zoom{ animation:kb-pan 22s ease-in-out infinite alternate; transform-origin:center;}
-  .photo-frame:nth-child(2) .kb-zoom{ animation-delay:-5s;}
-  .photo-frame:nth-child(3) .kb-zoom{ animation-delay:-11s;}
-  .photo-frame:nth-child(4) .kb-zoom{ animation-delay:-16s;}
-  @keyframes kb-pan{ from{ transform:scale(1);} to{ transform:scale(1.12);} }
+  .photo-strip img, .photo-strip video{ height:220px;}
   .stats-bar{
     margin-top:32px; background:var(--panel); border-radius:20px; padding:36px 20px;
     display:grid; grid-template-columns:repeat(4,1fr);
@@ -474,10 +467,10 @@
       <video autoplay muted loop playsinline preload="none" poster="img/tahai-sunset-poster.jpg" aria-label="Moáis de Ahu Tahai al atardecer, a pasos de Pikera Uri Eco Lodge">
         <source src="video/tahai-sunset.mp4" type="video/mp4">
       </video>
-      <div class="photo-frame"><img class="kb-zoom" src="img/sunset-palm.jpg" alt="Jardín de Pikera Uri Eco Lodge al atardecer"></div>
-      <div class="photo-frame"><img class="kb-zoom" src="img/lodge-aerial.jpg" alt="Caballos junto al lodge de Pikera Uri al atardecer"></div>
-      <div class="photo-frame"><img class="kb-zoom" src="img/living-room.jpg" alt="Sala de estar de Pikera Uri Eco Lodge"></div>
-      <div class="photo-frame"><img class="kb-zoom" src="img/cabalgata.jpg" alt="Cabalgata guiada por Cabalgatas Pantu en Rapa Nui"></div>
+      <img src="img/sunset-palm.jpg" alt="Jardín de Pikera Uri Eco Lodge al atardecer">
+      <img src="img/lodge-aerial.jpg" alt="Caballos junto al lodge de Pikera Uri al atardecer">
+      <img src="img/living-room.jpg" alt="Sala de estar de Pikera Uri Eco Lodge">
+      <img src="img/cabalgata.jpg" alt="Cabalgata guiada por Cabalgatas Pantu en Rapa Nui">
     </div>
   </div>
 </section>

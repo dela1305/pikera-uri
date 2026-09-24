@@ -286,9 +286,9 @@
       <p class="lede" data-es="Habitaciones frente al Pacífico, jardines con flora nativa y cabalgatas propias — a pasos de Tahai, en el extremo más tranquilo de Rapa Nui." data-en="Rooms facing the Pacific, gardens full of native flora and our own horseback rides — steps from Tahai, in the quietest corner of Rapa Nui." data-fr="Des chambres face au Pacifique, des jardins de flore native et nos propres balades à cheval — à deux pas de Tahai, dans le coin le plus paisible de Rapa Nui.">Habitaciones frente al Pacífico, jardines con flora nativa y cabalgatas propias — a pasos de Tahai, en el extremo más tranquilo de Rapa Nui.</p>
       <div class="hero-actions">
         <div class="booking-bar">
-          <input type="date" id="hero-checkin" class="booking-date" aria-label="Check-in">
+          <input type="date" class="booking-date booking-checkin" aria-label="Check-in">
           <span class="booking-sep">→</span>
-          <input type="date" id="hero-checkout" class="booking-date" aria-label="Check-out">
+          <input type="date" class="booking-date booking-checkout" aria-label="Check-out">
           <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-pill btn-pill--accent booking-link">
             <span data-es="Reservar ahora" data-en="Book Now" data-fr="Réserver maintenant">Reservar ahora</span>
             <span class="pip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span>
@@ -475,10 +475,15 @@
       <h2 data-es="Reserva tu escapada en Rapa Nui" data-en="Book your Rapa Nui getaway" data-fr="Réservez votre escapade à Rapa Nui">Reserva tu escapada en Rapa Nui</h2>
       <p data-es="Sector Tahai, Hanga Roa — disponibilidad y pago en línea las 24 horas, con confirmación inmediata." data-en="Tahai sector, Hanga Roa — 24-hour online availability and payment, with instant confirmation." data-fr="Secteur Tahai, Hanga Roa — disponibilité et paiement en ligne 24h/24, confirmation immédiate.">Sector Tahai, Hanga Roa — disponibilidad y pago en línea las 24 horas, con confirmación inmediata.</p>
       <div class="cta-actions">
-        <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-pill btn-pill--accent booking-link">
-          <span data-es="Reservar y pagar" data-en="Book & Pay" data-fr="Réserver et payer">Reservar y pagar</span>
-          <span class="pip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span>
-        </a>
+        <div class="booking-bar">
+          <input type="date" class="booking-date booking-checkin" aria-label="Check-in">
+          <span class="booking-sep">→</span>
+          <input type="date" class="booking-date booking-checkout" aria-label="Check-out">
+          <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-pill btn-pill--accent booking-link">
+            <span data-es="Reservar y pagar" data-en="Book & Pay" data-fr="Réserver et payer">Reservar y pagar</span>
+            <span class="pip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span>
+          </a>
+        </div>
         <a href="https://wa.me/56984119080" target="_blank" rel="noopener" class="btn-pill btn-pill--outline">
           <span data-es="Escríbenos" data-en="Message us" data-fr="Écrivez-nous">Escríbenos</span>
           <span class="pip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21l1.4-4.6A8 8 0 1 1 8.6 19.6L3 21z"/></svg></span>
@@ -589,30 +594,38 @@
   });
   renderQuote();
 
-  // Reserva con fechas: precarga check-in/check-out en el link de Cloudbeds
+  // Reserva con fechas: precarga check-in/check-out en el link de Cloudbeds.
+  // Hay una barra de fechas en el hero y otra en la banda final; ambas quedan sincronizadas.
   const BOOKING_URL = 'https://us2.cloudbeds.com/reservation/PdqS68';
-  const ciInput = document.getElementById('hero-checkin');
-  const coInput = document.getElementById('hero-checkout');
+  const ciInputs = Array.from(document.querySelectorAll('.booking-checkin'));
+  const coInputs = Array.from(document.querySelectorAll('.booking-checkout'));
   const bookingLinks = document.querySelectorAll('.booking-link');
   function isoDate(d){ return d.toISOString().slice(0, 10); }
   function addDays(iso, n){ const d = new Date(iso + 'T00:00:00'); d.setDate(d.getDate() + n); return isoDate(d); }
   function updateBookingLinks(){
-    const ci = ciInput.value, co = coInput.value;
+    const ci = ciInputs.find(i => i.value)?.value || '';
+    const co = coInputs.find(i => i.value)?.value || '';
     const url = (ci && co) ? `${BOOKING_URL}?#checkin=${ci}&checkout=${co}` : BOOKING_URL;
     bookingLinks.forEach(a => { a.href = url; });
   }
-  if (ciInput && coInput) {
+  if (ciInputs.length && coInputs.length) {
     const today = isoDate(new Date());
-    ciInput.min = today;
-    coInput.min = addDays(today, 1);
-    ciInput.addEventListener('change', () => {
-      if (ciInput.value) {
-        coInput.min = addDays(ciInput.value, 1);
-        if (coInput.value && coInput.value <= ciInput.value) coInput.value = addDays(ciInput.value, 1);
-      }
+    ciInputs.forEach(i => { i.min = today; });
+    coInputs.forEach(i => { i.min = addDays(today, 1); });
+    ciInputs.forEach(input => input.addEventListener('change', () => {
+      const value = input.value;
+      ciInputs.forEach(i => { i.value = value; });
+      const coMin = value ? addDays(value, 1) : addDays(today, 1);
+      coInputs.forEach(i => {
+        i.min = coMin;
+        if (i.value && i.value <= value) i.value = coMin;
+      });
       updateBookingLinks();
-    });
-    coInput.addEventListener('change', updateBookingLinks);
+    }));
+    coInputs.forEach(input => input.addEventListener('change', () => {
+      coInputs.forEach(i => { i.value = input.value; });
+      updateBookingLinks();
+    }));
   }
 </script>
 

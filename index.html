@@ -137,10 +137,10 @@
   .intro-heading .dim{ color:var(--muted); font-weight:600;}
   .intro-body p{ color:var(--muted); max-width:56ch; margin-top:20px; font-size:1rem;}
   .intro-media{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:44px;}
-  .intro-media img{ width:100%; height:300px; object-fit:cover; border-radius:20px;}
+  .intro-media img, .intro-media video{ width:100%; height:300px; object-fit:cover; border-radius:20px; display:block;}
   .photo-strip{ grid-template-columns:repeat(4,1fr);}
   .photo-strip.photo-strip-5{ grid-template-columns:repeat(5,1fr);}
-  .photo-strip img{ height:220px;}
+  .photo-strip img, .photo-strip video{ height:220px;}
   .stats-bar{
     margin-top:32px; background:var(--panel); border-radius:20px; padding:36px 20px;
     display:grid; grid-template-columns:repeat(4,1fr);
@@ -464,7 +464,9 @@
       </div>
     </div>
     <div class="intro-media photo-strip photo-strip-5">
-      <img src="img/tahai-sunset.webp" alt="Moáis de Ahu Tahai al atardecer, a pasos de Pikera Uri Eco Lodge">
+      <video autoplay muted loop playsinline preload="none" poster="img/tahai-sunset-poster.jpg" aria-label="Moáis de Ahu Tahai al atardecer, a pasos de Pikera Uri Eco Lodge">
+        <source src="video/tahai-sunset.mp4" type="video/mp4">
+      </video>
       <img src="img/sunset-palm.jpg" alt="Jardín de Pikera Uri Eco Lodge al atardecer">
       <img src="img/lodge-aerial.jpg" alt="Caballos junto al lodge de Pikera Uri al atardecer">
       <img src="img/living-room.jpg" alt="Sala de estar de Pikera Uri Eco Lodge">

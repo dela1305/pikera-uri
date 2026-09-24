@@ -7,345 +7,257 @@
 <meta name="description" content="Pikera Uri Eco Lodge — habitaciones frente al Pacífico, jardines con flora nativa y cabalgatas propias, a pasos de Tahai, en Hanga Roa, Isla de Pascua.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --black: #16110b;
-    --charcoal: #1f1810;
-    --panel: #251c12;
-    --paper: #f2ece0;
+    --ink: #16130d;
+    --paper: #faf8f2;
+    --panel: #f2eee2;
+    --accent: #9cb233;
+    --accent-dark: #7c8f28;
     --terra: #b5622f;
-    --terra-line: rgba(181,98,47,0.35);
-    --olive: #6f7d4f;
-    --gold: #a9843e;
-    --gold-line: rgba(169,132,62,0.35);
     --cream: #f4efe3;
-    --cream-dim: rgba(244,239,227,0.68);
-    --ink: #241d14;
-    --ink-dim: rgba(36,29,20,0.62);
-    --hairline: rgba(244,239,227,0.1);
-    --hairline-strong: rgba(244,239,227,0.08);
-    --serif: 'Fraunces', Georgia, serif;
-    --sans: 'Inter', -apple-system, sans-serif;
+    --muted: #6b6558;
+    --line: rgba(22,19,13,0.1);
+    --line-soft: rgba(22,19,13,0.06);
+    --sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
   }
   @media (prefers-reduced-motion: reduce){
     *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
-  body{
-    background:var(--black);
-    color:var(--cream);
-    font-family:var(--sans);
-    font-size:17px;
-    line-height:1.65;
-    overflow-x:hidden;
-  }
+  body{ background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.6;}
   img{max-width:100%; display:block;}
   a{color:inherit; text-decoration:none;}
   svg{display:block;}
   button{font-family:inherit;}
-  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
-  h1,h2,h3{font-family:var(--serif); font-weight:500; letter-spacing:0.005em;}
+  .wrap{max-width:1240px; margin:0 auto; padding:0 32px;}
+  h1,h2,h3{font-family:var(--sans); font-weight:800; letter-spacing:-0.02em; line-height:1.08;}
   .sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap;}
 
-  /* ---------- Light-section token swap ---------- */
-  .section-light{
-    background:var(--paper);
-    --cream:var(--ink);
-    --cream-dim:var(--ink-dim);
-    --gold:#7d5f27;
-    --gold-line: rgba(125,95,39,0.3);
-    --hairline: rgba(36,29,20,0.12);
-    --hairline-strong: rgba(36,29,20,0.09);
+  /* ---------- Pill buttons ---------- */
+  .btn-pill{
+    display:inline-flex; align-items:center; gap:14px; padding:7px 7px 7px 24px;
+    border-radius:999px; font-weight:600; font-size:0.95rem; border:none; cursor:pointer;
+    transition:gap 0.25s ease, transform 0.2s ease;
   }
+  .btn-pill:hover{ gap:18px;}
+  .btn-pill .pip{ width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .btn-pill .pip svg{ width:15px; height:15px;}
+  .btn-pill--accent{ background:var(--accent); color:var(--ink);}
+  .btn-pill--accent .pip{ background:var(--ink); color:var(--accent);}
+  .btn-pill--dark{ background:var(--ink); color:#fff;}
+  .btn-pill--dark .pip{ background:var(--accent); color:var(--ink);}
+  .btn-pill--light{ background:#fff; color:var(--ink);}
+  .btn-pill--light .pip{ background:var(--ink); color:#fff;}
+  .btn-pill--outline{ background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.4); padding:7px 7px 7px 24px;}
+  .btn-pill--outline .pip{ background:rgba(255,255,255,0.15); color:#fff;}
 
-  /* ---------- Buttons ---------- */
-  .btn-primary{
-    background:var(--terra); color:#fff; border:1px solid var(--terra); padding:15px 34px; font-size:0.92rem;
-    letter-spacing:0.03em; border-radius:2px; transition:background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    display:inline-block; font-weight:500;
+  .tag{
+    display:inline-flex; align-items:center; gap:8px; background:var(--panel); color:var(--ink);
+    padding:7px 16px; border-radius:999px; font-size:0.82rem; font-weight:600;
   }
-  .btn-primary:hover{ background:transparent; color:var(--cream);}
-  .btn-outline{
-    display:inline-flex; align-items:center; gap:10px;
-    color:var(--cream); border:1px solid var(--gold-line); padding:14px 27px; border-radius:2px;
-    font-size:0.9rem; letter-spacing:0.02em; transition:border-color 0.3s ease, background 0.3s ease;
-  }
-  .btn-outline:hover{ border-color:var(--gold); background:rgba(169,132,62,0.08);}
-  .btn-outline svg{ width:16px; height:16px;}
-  .icon{ width:22px; height:22px; color:var(--terra); flex-shrink:0;}
-  .icon svg{ width:100%; height:100%;}
+  .tag::before{ content:''; width:6px; height:6px; border-radius:50%; background:var(--accent);}
 
   /* ---------- Header ---------- */
   header{
-    position:fixed; top:0; left:0; right:0; z-index:100;
-    display:grid; grid-template-columns:1fr auto 1fr; align-items:center; column-gap:24px;
-    padding:16px 32px;
-    background:linear-gradient(to bottom, rgba(22,17,11,0.88), transparent);
-    transition:background 0.4s ease, padding 0.4s ease;
+    position:sticky; top:0; z-index:100; background:rgba(250,248,242,0.92); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line-soft);
   }
-  header.scrolled{ background:rgba(22,17,11,0.94); backdrop-filter:blur(6px); padding:11px 32px; border-bottom:1px solid var(--gold-line);}
-  .brand{font-family:var(--serif); font-size:1.4rem; color:var(--cream); letter-spacing:0.01em; display:inline-flex; align-items:center; grid-column:2; justify-self:center;}
-  .brand-mark{ height:46px; width:auto; margin-right:12px; display:block;}
-  .brand-mark-lg{ height:60px; margin-right:0; margin-bottom:14px;}
-  .footer-brand{ flex-direction:column;}
-  nav{display:flex; gap:32px; align-items:center;}
-  .nav-left{ grid-column:1; justify-self:start;}
-  .nav-right{ grid-column:3; justify-self:end;}
-  .nav-mobile{ display:none;}
-  header nav a{font-size:0.92rem; color:rgba(244,239,227,0.7); position:relative; padding:4px 0;}
-  header nav a:hover{color:var(--gold);}
-  header nav a.cta-link{
-    color:#fff; background:var(--terra); border:1px solid var(--terra); padding:9px 20px; border-radius:2px;
-    font-size:0.83rem; letter-spacing:0.04em; transition:background 0.3s ease, color 0.3s ease;
-  }
-  header nav a.cta-link:hover{ background:transparent; color:var(--cream);}
-  .lang-switch{ display:flex; gap:4px; align-items:center;}
+  .header-inner{ display:flex; align-items:center; justify-content:space-between; padding:16px 0; gap:24px;}
+  .brand{ display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.1rem;}
+  .brand img{ height:38px; width:auto;}
+  nav.main-nav{ display:flex; gap:30px; align-items:center;}
+  nav.main-nav a{ font-size:0.92rem; font-weight:500; color:var(--ink);}
+  nav.main-nav a:hover{ color:var(--accent-dark);}
+  .header-right{ display:flex; align-items:center; gap:18px;}
+  .lang-switch{ display:flex; gap:3px; background:var(--panel); padding:3px; border-radius:999px;}
   .lang-switch button{
-    background:none; border:1px solid var(--hairline-strong); color:var(--cream-dim); font-size:0.72rem;
-    letter-spacing:0.04em; padding:4px 8px; border-radius:2px; cursor:pointer; transition:border-color 0.2s ease, color 0.2s ease;
+    background:none; border:none; color:var(--muted); font-size:0.72rem; font-weight:700;
+    padding:5px 10px; border-radius:999px; cursor:pointer; transition:background 0.2s ease, color 0.2s ease;
   }
-  .lang-switch button.active, .lang-switch button:hover{ border-color:var(--gold); color:var(--gold);}
-  .nav-toggle{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; grid-column:3; justify-self:end;}
-  .nav-toggle span{width:26px; height:1px; background:var(--cream);}
+  .lang-switch button.active{ background:#fff; color:var(--ink);}
+  .nav-toggle{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer;}
+  .nav-toggle span{ width:24px; height:2px; background:var(--ink); border-radius:2px;}
+  .nav-mobile{ display:none;}
 
   /* ---------- Hero ---------- */
+  .hero-wrap{ padding:20px 32px 0;}
   .hero{
-    position:relative; z-index:0; min-height:100vh; display:flex; align-items:center;
-    padding:160px 0 70px;
-    background:
-      radial-gradient(ellipse at 78% 28%, rgba(169,132,62,0.14), transparent 55%),
-      var(--black);
+    position:relative; max-width:1240px; margin:0 auto; border-radius:32px; overflow:hidden;
+    min-height:640px; display:flex; align-items:flex-start; padding-top:90px;
   }
-  .hero-grid{ display:grid; grid-template-columns:1fr 0.92fr; gap:64px; align-items:center; width:100%;}
-  .eyebrow{ text-transform:uppercase; letter-spacing:0.18em; font-size:0.76rem; color:var(--terra); margin-bottom:20px;}
-  .hero h1{
-    font-size:clamp(2.4rem, 4.6vw, 4.2rem);
-    line-height:1.08;
-    color:var(--cream);
+  .hero::before{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(10,10,5,0.35) 0%, rgba(10,10,5,0.15) 40%, rgba(10,10,5,0.65) 100%);
   }
-  .hero h1 span{ display:block; opacity:0; animation:hero-rise 1s cubic-bezier(0.16,1,0.3,1) forwards;}
-  .hero h1 span:nth-child(1){ animation-delay:0.2s;}
-  .hero h1 span:nth-child(2){ animation-delay:0.38s;}
-  .hero p.lede{
-    max-width:460px; margin-top:22px; color:var(--cream-dim); font-size:1.08rem;
-    opacity:0; animation:hero-rise 1s cubic-bezier(0.16,1,0.3,1) forwards; animation-delay:0.56s;
+  .hero img.hero-bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-1;}
+  .hero-content{ position:relative; width:100%; text-align:center; padding:0 40px;}
+  .hero h1{ font-size:clamp(2.6rem, 5.4vw, 4.6rem); color:#fff; max-width:900px; margin:0 auto;}
+  .hero p.lede{ color:rgba(255,255,255,0.88); max-width:560px; margin:22px auto 0; font-size:1.05rem;}
+  .hero-actions{ margin-top:32px; display:flex; justify-content:center;}
+  .float-cards{
+    position:relative; margin-top:64px; display:grid; grid-template-columns:0.85fr 1.15fr; gap:20px; padding:0 40px 40px;
   }
-  .hero-actions{
-    display:flex; gap:16px; margin-top:34px; align-items:center; flex-wrap:wrap;
-    opacity:0; animation:hero-rise 1s cubic-bezier(0.16,1,0.3,1) forwards; animation-delay:0.74s;
+  .float-card{ border-radius:20px; padding:26px; display:flex; gap:18px; align-items:center;}
+  .float-card--info{ background:rgba(22,25,14,0.55); backdrop-filter:blur(6px);}
+  .float-card--info img{ width:88px; height:88px; border-radius:12px; object-fit:cover; flex-shrink:0;}
+  .float-card--info h3{ color:#fff; font-size:1.05rem; font-weight:700; margin-bottom:6px;}
+  .float-card--info p{ color:rgba(255,255,255,0.75); font-size:0.86rem; line-height:1.4; margin-bottom:8px;}
+  .float-card--info a{ color:var(--accent); font-size:0.82rem; font-weight:600; display:inline-flex; align-items:center; gap:5px;}
+  .float-card--quote{ background:rgba(22,25,14,0.55); backdrop-filter:blur(6px); flex-direction:column; align-items:flex-start; gap:14px;}
+  .float-card--quote p{ color:rgba(255,255,255,0.9); font-size:0.92rem; line-height:1.5;}
+  .quote-person{ display:flex; align-items:center; gap:10px;}
+  .avatar-initials{
+    width:38px; height:38px; border-radius:50%; background:var(--accent); color:var(--ink);
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.85rem; flex-shrink:0;
   }
-  .hero-facts{
-    display:flex; gap:28px; margin-top:42px; flex-wrap:wrap;
-    opacity:0; animation:hero-rise 1s cubic-bezier(0.16,1,0.3,1) forwards; animation-delay:0.9s;
-  }
-  .hero-fact{ display:flex; align-items:center; gap:10px; color:var(--cream-dim); font-size:0.84rem;}
-  @keyframes hero-zoom{ from{ transform:scale(1);} to{ transform:scale(1.08);} }
-  @keyframes hero-rise{ from{ opacity:0; transform:translateY(22px);} to{ opacity:1; transform:translateY(0);} }
-  .hero-media{ position:relative; border-radius:4px; overflow:hidden;}
-  .hero-media img{ width:100%; height:580px; object-fit:cover; display:block; transform-origin:center; animation:hero-zoom 24s ease-out forwards;}
-  .scroll-cue{
-    position:absolute; right:32px; bottom:6vh; writing-mode:vertical-rl;
-    color:var(--cream-dim); font-size:0.78rem; letter-spacing:0.14em; display:flex; align-items:center; gap:10px;
-    opacity:0; animation:hero-rise 1.2s ease forwards; animation-delay:1.1s;
-  }
-  .scroll-cue::after{ content:''; width:1px; height:50px; background:linear-gradient(var(--gold), transparent); display:block;}
+  .quote-person b{ color:#fff; font-size:0.88rem; display:block;}
+  .quote-person span{ color:rgba(255,255,255,0.65); font-size:0.78rem;}
 
   /* ---------- Section shell ---------- */
-  section{ padding:120px 0; position:relative;}
-  .section-head{ max-width:640px; margin-bottom:60px;}
-  .section-head h2{ font-size:clamp(2rem, 3.6vw, 2.9rem); color:var(--cream);}
-  .rule{ width:60px; height:1px; background:var(--gold); margin:24px 0;}
+  section{ padding:110px 0;}
+  .section-row{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:56px;}
+  .section-row h2{ font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-top:18px;}
+  .section-row p{ color:var(--muted); max-width:46ch; margin-top:14px;}
 
-  /* ---------- Quick-info card (floats between hero and next section) ---------- */
-  .quick-card{
-    position:relative; z-index:5; margin-top:-180px; margin-bottom:70px;
-    background:#1c150d; border:1px solid var(--gold-line); border-radius:4px; padding:30px 40px;
-    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px;
-    box-shadow:0 30px 60px -20px rgba(0,0,0,0.55);
-    --gold:#a9843e; --gold-line:rgba(169,132,62,0.35); --cream:#f4efe3; --cream-dim:rgba(244,239,227,0.68);
+  /* ---------- Intro ---------- */
+  .intro-heading{ font-size:clamp(1.8rem, 3.4vw, 2.7rem); max-width:820px;}
+  .intro-heading .dim{ color:var(--muted); font-weight:600;}
+  .intro-body p{ color:var(--muted); max-width:56ch; margin-top:20px; font-size:1rem;}
+  .intro-media{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:44px;}
+  .intro-media img{ width:100%; height:300px; object-fit:cover; border-radius:20px;}
+  .stats-bar{
+    margin-top:32px; background:var(--panel); border-radius:20px; padding:36px 20px;
+    display:grid; grid-template-columns:repeat(4,1fr);
   }
-  .quick-card-info{ display:flex; align-items:center; gap:16px;}
-  .quick-card-text b{ display:block; color:var(--cream); font-family:var(--serif); font-size:1.05rem; font-weight:500; margin-bottom:3px;}
-  .quick-card-text span{ display:block; color:var(--cream-dim); font-size:0.84rem;}
-  .quick-card .icon{ width:28px; height:28px; color:var(--gold);}
+  .stat{ text-align:center; padding:0 12px; border-left:1px solid var(--line);}
+  .stat:first-child{ border-left:none;}
+  .stat .num{ font-size:2rem; font-weight:800;}
+  .stat .label{ color:var(--muted); font-size:0.84rem; margin-top:4px;}
 
-  /* ---------- Bienvenida / experiencia ---------- */
-  .exp-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:76px; align-items:start;}
-  .exp-copy p{ color:var(--cream-dim); margin-bottom:18px; max-width:52ch;}
-  .exp-figures{ display:grid; gap:24px;}
-  .exp-figure{ border-top:1px solid var(--gold-line); padding-top:16px; display:flex; flex-direction:column; gap:6px;}
-  .exp-figure .num{ font-family:var(--serif); font-size:2.2rem; color:var(--gold);}
-  .exp-figure .label{ color:var(--cream-dim); font-size:0.92rem;}
-
-  /* ---------- Ubicación (dark, imagen + copy) ---------- */
-  .ubicacion-teaser{ background:var(--charcoal);}
-  .teaser-grid{ display:grid; grid-template-columns:0.95fr 1.05fr; gap:64px; align-items:center;}
-  .teaser-media{ border-radius:4px; overflow:hidden;}
-  .teaser-media img{ width:100%; height:440px; object-fit:cover;}
-  .teaser-copy p{ color:var(--cream-dim); margin:18px 0 26px; max-width:50ch;}
-  .teaser-list{ list-style:none; display:grid; gap:14px;}
-  .teaser-list li{ display:flex; align-items:flex-start; gap:12px; color:var(--cream-dim); font-size:0.94rem;}
-  .teaser-list .icon{ width:19px; height:19px; margin-top:3px;}
-
-  /* ---------- Comodidades (3 feature cards) ---------- */
-  .feature-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--hairline); border:1px solid var(--hairline);}
-  .feature-card{ background:var(--paper); padding:44px 36px; display:flex; flex-direction:column; gap:16px;}
-  .feature-card .icon{ width:32px; height:32px;}
-  .feature-card h3{ font-size:1.3rem; color:var(--ink);}
-  .feature-card p{ color:var(--ink-dim); font-size:0.94rem; max-width:36ch;}
-  .feature-card a{ margin-top:auto; font-size:0.85rem; color:var(--terra); letter-spacing:0.03em; display:inline-flex; align-items:center; gap:6px;}
-  .feature-card a svg{ width:14px; height:14px; transition:transform 0.2s ease;}
-  .feature-card a:hover svg{ transform:translateX(3px);}
-
-  /* ---------- Habitaciones ---------- */
-  .rooms-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px;}
-  .rooms-media img{ width:100%; height:290px; object-fit:cover; border-radius:2px;}
-  .rooms-media:first-child img{ height:604px;}
-  .rooms-media:nth-child(2){ display:grid; gap:18px;}
-  .rooms-copy{ margin-top:56px; display:grid; grid-template-columns:1.1fr 0.9fr 0.9fr; gap:56px;}
-  .rooms-copy > p{ color:var(--ink-dim); max-width:48ch;}
-  .amenity-list{ list-style:none; display:grid; gap:12px;}
-  .amenity-list h4{ font-family:var(--serif); font-weight:500; font-size:1.1rem; color:var(--ink); margin-bottom:6px; border-bottom:1px solid var(--gold-line); padding-bottom:10px;}
-  .amenity-list li{ display:flex; align-items:flex-start; gap:10px; color:var(--ink-dim); font-size:0.9rem;}
-  .amenity-list .icon{ width:17px; height:17px; margin-top:2px;}
-  .rooms-note{ margin-top:40px; padding-top:24px; border-top:1px solid var(--hairline-strong); color:var(--ink-dim); font-size:0.9rem; font-style:italic; max-width:60ch;}
-
-  /* ---------- Cabalgatas (dark, imagen + copy invertido) ---------- */
-  .horses{ background:var(--black);}
-  .teaser-grid.reverse .teaser-media{ order:2;}
-  .teaser-grid.reverse .teaser-copy{ order:1;}
-
-  /* ---------- Galería ---------- */
-  .gallery-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap;}
-  .gallery-tabs{ display:flex; gap:8px; margin-bottom:44px; flex-wrap:wrap;}
-  .gallery-tab{
-    padding:9px 18px; border:1px solid var(--gold); border-radius:2px; font-size:0.85rem;
-    letter-spacing:0.02em; color:var(--cream); cursor:pointer; background:transparent; font-family:var(--sans);
-    transition:background 0.3s ease, color 0.3s ease;
+  /* ---------- Experiencias (3 cards) ---------- */
+  .exp-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .exp-card{
+    position:relative; border-radius:24px; overflow:hidden; height:420px; display:flex; flex-direction:column;
+    justify-content:flex-end; padding:28px;
   }
-  .gallery-tab:hover{ background:var(--gold); color:var(--paper);}
-  .gallery-tab.active{ background:var(--gold); color:var(--paper);}
-  .gallery-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
-  .gallery-item{ overflow:hidden; border-radius:2px; aspect-ratio:1/1;}
-  .gallery-item img{ width:100%; height:100%; object-fit:cover; transition:transform 0.6s ease;}
-  .gallery-item:hover img{ transform:scale(1.06);}
-  .gallery-item.is-hidden{ display:none;}
+  .exp-card img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2;}
+  .exp-card::before{ content:''; position:absolute; inset:0; background:linear-gradient(180deg, transparent 30%, rgba(10,10,5,0.85) 100%); z-index:-1;}
+  .exp-card h3{ color:#fff; font-size:1.35rem; margin-bottom:8px;}
+  .exp-card p{ color:rgba(255,255,255,0.78); font-size:0.88rem; margin-bottom:14px; max-width:32ch;}
+  .exp-card .badge{ align-self:flex-start; background:rgba(255,255,255,0.14); color:#fff; font-size:0.78rem; padding:7px 14px; border-radius:999px; backdrop-filter:blur(4px);}
 
-  /* ---------- Reseñas ---------- */
-  .reviews{ background:var(--charcoal);}
-  .reviews-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--hairline); border:1px solid var(--hairline);}
-  .review-card{ background:var(--black); padding:38px; display:flex; flex-direction:column; gap:18px;}
-  .review-stars{ display:flex; gap:3px; color:var(--gold);}
-  .review-stars svg{ width:15px; height:15px;}
-  .review-card p{ color:var(--cream-dim); font-size:1rem; font-style:italic; font-family:var(--serif); line-height:1.5;}
-  .review-name{ font-size:0.85rem; color:var(--cream); letter-spacing:0.02em;}
-
-  /* ---------- Ubicación + mapa ---------- */
-  .location-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:0; border:1px solid var(--gold-line);}
-  .location-info{ padding:52px; display:flex; flex-direction:column; justify-content:center; gap:20px;}
-  .location-info h3{ font-size:1.5rem; color:var(--ink);}
-  .location-info p{ color:var(--ink-dim);}
-  .location-list{ list-style:none; display:grid; gap:14px; margin-top:6px;}
-  .location-list li{ color:var(--ink-dim); font-size:0.94rem; display:flex; gap:12px;}
-  .location-list li b{ color:var(--terra); font-weight:500; min-width:100px; display:inline-block;}
-  .map-embed{ min-height:420px; background:#0f0d09; position:relative;}
-  .map-embed iframe{ width:100%; height:100%; min-height:420px; border:0;}
-  .location-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-top:4px;}
-
-  /* ---------- CTA banda final ---------- */
-  .cta-band{ background:var(--panel); border-top:1px solid var(--gold-line); border-bottom:1px solid var(--gold-line); text-align:center;}
-  .cta-band h2{ font-size:clamp(2rem,3.6vw,2.8rem); color:var(--cream);}
-  .cta-band p{ color:var(--cream-dim); max-width:52ch; margin:18px auto 34px;}
-  .cta-socials{ display:flex; gap:14px; justify-content:center; margin-top:34px;}
-  .cta-socials a{
-    border:1px solid var(--gold-line); width:44px; height:44px; border-radius:2px;
-    display:flex; align-items:center; justify-content:center; color:var(--gold);
-    transition:background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  /* ---------- Testimonios carrusel ---------- */
+  .testimonial-section{ background:var(--panel); border-radius:32px; margin:0 32px; padding:70px 40px; position:relative; max-width:1240px; margin-left:auto; margin-right:auto;}
+  .testimonial-track{ max-width:640px; margin:0 auto; text-align:center; position:relative;}
+  .quote-mark{ font-family:Georgia, serif; font-size:3.5rem; color:var(--accent); line-height:1; margin-bottom:8px;}
+  .testimonial-track p.quote-text{ font-size:1.2rem; line-height:1.5; min-height:5.5em;}
+  .testimonial-person{ margin-top:26px; display:flex; flex-direction:column; align-items:center; gap:10px;}
+  .testimonial-person .avatar-initials{ width:46px; height:46px; font-size:1rem;}
+  .testimonial-person b{ font-size:0.95rem;}
+  .testimonial-person span{ color:var(--muted); font-size:0.84rem;}
+  .carousel-arrows{ position:absolute; top:50%; left:0; right:0; display:flex; justify-content:space-between; transform:translateY(-50%); pointer-events:none;}
+  .carousel-arrows button{
+    pointer-events:auto; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:#fff;
+    display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--ink); transition:background 0.2s ease;
   }
-  .cta-socials a:hover{ background:var(--gold); color:var(--black); border-color:var(--gold);}
-  .cta-socials svg{ width:18px; height:18px;}
+  .carousel-arrows button:hover{ background:var(--ink); color:#fff;}
+  .carousel-arrows svg{ width:18px; height:18px;}
 
-  /* ---------- Contacto ---------- */
-  .contact{ background:var(--paper);}
-  .contact-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:70px;}
-  .contact-copy p{ color:var(--ink-dim); margin-top:16px; max-width:44ch;}
-  form{ display:grid; gap:18px;}
-  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:18px;}
-  label{ display:block; font-size:0.83rem; color:var(--ink-dim); margin-bottom:7px; letter-spacing:0.02em;}
-  input, select, textarea{
-    width:100%; background:transparent; border:none; border-bottom:1px solid var(--gold-line);
-    color:var(--ink); font-family:var(--sans); font-size:1rem; padding:9px 2px; outline:none;
-  }
-  input:focus, select:focus, textarea:focus{ border-color:var(--terra);}
-  textarea{ resize:vertical; min-height:70px;}
-  .form-submit{
-    background:var(--terra); color:#fff; border:none; padding:15px 32px; font-size:0.94rem;
-    cursor:pointer; letter-spacing:0.01em; border-radius:2px; justify-self:start; font-family:var(--sans); font-weight:500;
-    transition:background 0.25s ease;
-  }
-  .form-submit:hover{ background:var(--ink);}
-  .form-note{ font-size:0.84rem; color:var(--ink-dim); font-style:italic;}
-  #form-status{ font-size:0.88rem; margin-top:4px;}
+  /* ---------- Incluido (reemplaza blog) ---------- */
+  .included-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:20px;}
+  .included-hero{ position:relative; border-radius:22px; overflow:hidden; min-height:440px;}
+  .included-hero img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2;}
+  .included-hero::before{ content:''; position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(10,10,5,0.8) 100%); z-index:-1;}
+  .included-hero-text{ position:absolute; left:0; right:0; bottom:0; padding:28px; color:#fff;}
+  .included-hero-text h3{ font-size:1.3rem;}
+  .included-list{ display:flex; flex-direction:column; gap:20px;}
+  .included-item{ display:flex; gap:16px; align-items:center; background:#fff; border:1px solid var(--line-soft); border-radius:18px; padding:16px;}
+  .included-item img{ width:96px; height:96px; border-radius:12px; object-fit:cover; flex-shrink:0;}
+  .included-item h4{ font-size:1.02rem; font-weight:700; margin-bottom:5px;}
+  .included-item p{ color:var(--muted); font-size:0.86rem; line-height:1.4; margin-bottom:6px;}
+  .included-item a{ color:var(--accent-dark); font-size:0.8rem; font-weight:700; display:inline-flex; align-items:center; gap:5px;}
+
+  /* ---------- CTA banda final (reserva + pago) ---------- */
+  .cta-band{ position:relative; border-radius:32px; overflow:hidden; margin:0 32px; max-width:1240px; margin-left:auto; margin-right:auto; padding:80px 40px; text-align:center;}
+  .cta-band img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-2;}
+  .cta-band::before{ content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,10,5,0.45), rgba(10,10,5,0.82)); z-index:-1;}
+  .cta-band h2{ color:#fff; font-size:clamp(2rem,4vw,2.9rem);}
+  .cta-band p{ color:rgba(255,255,255,0.82); max-width:480px; margin:18px auto 32px;}
+  .cta-actions{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
 
   /* ---------- Footer ---------- */
-  footer{ background:var(--black); padding:52px 0 34px; text-align:center;}
-  footer .brand{ display:inline-flex; margin-bottom:10px;}
-  footer p{ color:var(--cream-dim); font-size:0.84rem;}
+  footer{ padding:70px 0 32px;}
+  .footer-top{ display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap; padding-bottom:48px; border-bottom:1px solid var(--line);}
+  .footer-brand{ max-width:320px;}
+  .footer-brand .brand{ margin-bottom:14px;}
+  .footer-brand p{ color:var(--muted); font-size:0.9rem; line-height:1.6; margin-bottom:10px;}
+  .footer-cols{ display:flex; gap:64px; flex-wrap:wrap;}
+  .footer-col h5{ font-size:0.82rem; color:var(--muted); font-weight:700; margin-bottom:16px; text-transform:uppercase; letter-spacing:0.04em;}
+  .footer-col a{ display:block; font-size:0.92rem; margin-bottom:12px; font-weight:500;}
+  .footer-col a:hover{ color:var(--accent-dark);}
+  .footer-socials{ display:flex; gap:10px;}
+  .footer-socials a{ width:38px; height:38px; border-radius:50%; background:var(--ink); color:#fff; display:flex; align-items:center; justify-content:center;}
+  .footer-socials svg{ width:16px; height:16px;}
+  .footer-bottom{ display:flex; justify-content:space-between; padding-top:24px; color:var(--muted); font-size:0.82rem; flex-wrap:wrap; gap:12px;}
 
-  @media (max-width: 900px){
-    header{ display:flex; justify-content:space-between;}
-    .nav-left, .nav-right{ display:none;}
+  @media (max-width: 980px){
+    nav.main-nav{ display:none;}
+    .lang-switch{ display:none;}
+    .nav-toggle{ display:flex;}
     .nav-mobile{
-      display:flex; position:fixed; top:0; right:-100%; height:100vh; width:80%; max-width:340px;
-      background:var(--black); flex-direction:column; justify-content:center; gap:30px; padding:40px;
-      transition:right 0.35s ease; border-left:1px solid var(--gold-line); z-index:99; overflow-y:auto;
+      display:flex; flex-direction:column; gap:4px; position:fixed; top:0; right:-100%; height:100vh; width:78%; max-width:320px;
+      background:var(--paper); padding:100px 32px 40px; z-index:99; transition:right 0.3s ease; box-shadow:-10px 0 30px rgba(0,0,0,0.1);
     }
     .nav-mobile.open{ right:0;}
-    .nav-toggle{ display:flex;}
-    .hero{ padding-top:120px;}
-    .hero-grid{ grid-template-columns:1fr; gap:52px;}
-    .hero-media{ order:-1;}
-    .hero-media img{ height:320px;}
-    .quick-card{ margin-top:22px; flex-direction:column; align-items:flex-start; text-align:left;}
-    .exp-grid, .teaser-grid, .location-grid, .contact-grid{ grid-template-columns:1fr;}
-    .teaser-grid.reverse .teaser-media, .teaser-grid.reverse .teaser-copy{ order:0;}
-    .teaser-media img{ height:280px;}
-    .feature-grid{ grid-template-columns:1fr;}
-    .rooms-grid{ grid-template-columns:1fr;}
-    .rooms-media:first-child img{ height:320px;}
-    .rooms-media:nth-child(2){ grid-template-columns:1fr 1fr;}
-    .rooms-copy{ grid-template-columns:1fr; gap:32px;}
-    .gallery-grid{ grid-template-columns:repeat(2,1fr);}
-    .reviews-grid{ grid-template-columns:1fr;}
-    .map-embed{ min-height:320px;}
-    .form-row{ grid-template-columns:1fr;}
-    section{ padding:80px 0;}
+    .nav-mobile a{ padding:14px 0; border-bottom:1px solid var(--line-soft); font-weight:600;}
+    .nav-mobile .lang-switch{ display:flex; margin-top:18px; align-self:flex-start;}
+    .hero-wrap{ padding:14px 16px 0;}
+    .hero{ border-radius:22px; min-height:560px; padding-top:110px;}
+    .float-cards{ grid-template-columns:1fr; padding:0 16px 24px; margin-top:36px;}
+    .intro-media, .exp-cards, .included-grid{ grid-template-columns:1fr;}
+    .stats-bar{ grid-template-columns:1fr 1fr; row-gap:24px;}
+    .stat:nth-child(3){ border-left:none;}
+    .testimonial-section{ margin:0 16px; padding:56px 24px; border-radius:24px;}
+    .carousel-arrows{ position:static; transform:none; justify-content:center; gap:16px; margin-top:28px;}
+    .cta-band{ margin:0 16px; border-radius:24px; padding:56px 24px;}
+    .footer-cols{ gap:36px;}
+    section{ padding:72px 0;}
+    .wrap{ padding:0 20px;}
   }
 </style>
 </head>
 <body>
 
-<header id="site-header">
-  <nav class="nav-left">
-    <a href="#habitaciones" data-es="Habitaciones" data-en="Rooms" data-fr="Chambres">Habitaciones</a>
-    <a href="#cabalgatas" data-es="Cabalgatas" data-en="Horseback Rides" data-fr="Balades à cheval">Cabalgatas</a>
-    <a href="#galeria" data-es="Galería" data-en="Gallery" data-fr="Galerie">Galería</a>
-  </nav>
-  <a href="#top" class="brand"><img src="img/logo.png" alt="" class="brand-mark">Pikera Uri</a>
-  <nav class="nav-right">
-    <a href="#ubicacion" data-es="Ubicación" data-en="Location" data-fr="Emplacement">Ubicación</a>
-    <div class="lang-switch" role="group" aria-label="Idioma / Language / Langue">
-      <button data-lang="es" class="active">ES</button>
-      <button data-lang="en">EN</button>
-      <button data-lang="fr">FR</button>
+<header>
+  <div class="wrap header-inner">
+    <a href="#top" class="brand"><img src="img/logo.png" alt="Pikera Uri Eco Lodge"></a>
+    <nav class="main-nav">
+      <a href="#habitaciones" data-es="Habitaciones" data-en="Rooms" data-fr="Chambres">Habitaciones</a>
+      <a href="#experiencias" data-es="Experiencias" data-en="Experiences" data-fr="Expériences">Experiencias</a>
+      <a href="#galeria" data-es="Galería" data-en="Gallery" data-fr="Galerie">Galería</a>
+      <a href="#ubicacion" data-es="Ubicación" data-en="Location" data-fr="Emplacement">Ubicación</a>
+    </nav>
+    <div class="header-right">
+      <div class="lang-switch" role="group" aria-label="Idioma / Language / Langue">
+        <button data-lang="es" class="active">ES</button>
+        <button data-lang="en">EN</button>
+        <button data-lang="fr">FR</button>
+      </div>
+      <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-pill btn-pill--dark">
+        <span data-es="Reservar" data-en="Book Now" data-fr="Réserver">Reservar</span>
+        <span class="pip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="cta-link" data-es="Reservar" data-en="Book Now" data-fr="Réserver">Reservar</a>
-  </nav>
+  </div>
   <nav id="nav-menu" class="nav-mobile">
     <a href="#habitaciones" data-es="Habitaciones" data-en="Rooms" data-fr="Chambres">Habitaciones</a>
-    <a href="#cabalgatas" data-es="Cabalgatas" data-en="Horseback Rides" data-fr="Balades à cheval">Cabalgatas</a>
+    <a href="#experiencias" data-es="Experiencias" data-en="Experiences" data-fr="Expériences">Experiencias</a>
     <a href="#galeria" data-es="Galería" data-en="Gallery" data-fr="Galerie">Galería</a>
     <a href="#ubicacion" data-es="Ubicación" data-en="Location" data-fr="Emplacement">Ubicación</a>
     <div class="lang-switch" role="group" aria-label="Idioma / Language / Langue">
@@ -353,393 +265,249 @@
       <button data-lang="en">EN</button>
       <button data-lang="fr">FR</button>
     </div>
-    <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="cta-link" data-es="Reservar" data-en="Book Now" data-fr="Réserver">Reservar</a>
   </nav>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
-    <span></span><span></span><span></span>
-  </button>
 </header>
 
-<section class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow" data-es="Eco Lodge · Hanga Roa" data-en="Eco Lodge · Hanga Roa" data-fr="Éco-lodge · Hanga Roa">Eco Lodge · Hanga Roa</p>
-      <h1>
-        <span data-es="Tu descanso frente" data-en="Your stay, facing" data-fr="Votre séjour, face">Tu descanso frente</span>
-        <span data-es="al Pacífico." data-en="the Pacific." data-fr="au Pacifique.">al Pacífico.</span>
-      </h1>
-      <p class="lede" data-es="Seis habitaciones, jardines con flora nativa y caballos que llegan cada mañana al lodge — a pasos de Tahai, en el extremo más tranquilo de Rapa Nui." data-en="Six rooms, gardens full of native flora, and horses that arrive at the lodge every morning — steps from Tahai, in the quietest corner of Rapa Nui." data-fr="Six chambres, des jardins de flore native et des chevaux qui arrivent chaque matin au lodge — à quelques pas de Tahai, dans le coin le plus paisible de Rapa Nui.">Seis habitaciones, jardines con flora nativa y caballos que llegan cada mañana al lodge — a pasos de Tahai, en el extremo más tranquilo de Rapa Nui.</p>
+<div class="hero-wrap" id="top">
+  <div class="hero">
+    <img class="hero-bg" src="img/lodge-field.jpg" alt="Terraza de Pikera Uri Eco Lodge al atardecer, con vista al jardín y al océano">
+    <div class="hero-content">
+      <h1 data-es="El descanso empieza en Pikera Uri" data-en="Your stay starts at Pikera Uri" data-fr="Votre séjour commence à Pikera Uri">El descanso empieza en Pikera Uri</h1>
+      <p class="lede" data-es="Habitaciones frente al Pacífico, jardines con flora nativa y cabalgatas propias — a pasos de Tahai, en el extremo más tranquilo de Rapa Nui." data-en="Rooms facing the Pacific, gardens full of native flora and our own horseback rides — steps from Tahai, in the quietest corner of Rapa Nui." data-fr="Des chambres face au Pacifique, des jardins de flore native et nos propres balades à cheval — à deux pas de Tahai, dans le coin le plus paisible de Rapa Nui.">Habitaciones frente al Pacífico, jardines con flora nativa y cabalgatas propias — a pasos de Tahai, en el extremo más tranquilo de Rapa Nui.</p>
       <div class="hero-actions">
-        <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-primary" data-es="Reservar ahora" data-en="Book Now" data-fr="Réserver maintenant">Reservar ahora</a>
-        <a href="#habitaciones" class="btn-outline">
-          <span data-es="Ver habitaciones" data-en="See rooms" data-fr="Voir les chambres">Ver habitaciones</span>
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+        <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-pill btn-pill--accent">
+          <span data-es="Reservar ahora" data-en="Book Now" data-fr="Réserver maintenant">Reservar ahora</span>
+          <span class="pip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span>
         </a>
       </div>
-      <div class="hero-facts">
-        <div class="hero-fact">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg></span>
-          <span data-es="A pasos de Tahai" data-en="Steps from Tahai" data-fr="À deux pas de Tahai">A pasos de Tahai</span>
-        </div>
-        <div class="hero-fact">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 12c3-4 6-4 9 0s6 4 9 0"/><path d="M3 17c3-4 6-4 9 0s6 4 9 0" opacity=".5"/></svg></span>
-          <span data-es="Vista al Pacífico" data-en="Ocean views" data-fr="Vue sur le Pacifique">Vista al Pacífico</span>
-        </div>
-        <div class="hero-fact">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 19c2-5 4-8 8-8s6 3 8 8"/><circle cx="8.5" cy="8" r="2.2"/><path d="M11 10.5 13 8"/></svg></span>
-          <span data-es="Cabalgatas propias" data-en="Our own horse rides" data-fr="Balades à cheval maison">Cabalgatas propias</span>
+    </div>
+    <div class="float-cards">
+      <div class="float-card float-card--info">
+        <img src="img/cabalgata.jpg" alt="Cabalgata guiada por Cabalgatas Pantu">
+        <div>
+          <h3 data-es="Cabalgatas Pantu" data-en="Cabalgatas Pantu" data-fr="Cabalgatas Pantu">Cabalgatas Pantu</h3>
+          <p data-es="Guías con más de 18 años de experiencia y caballos bien entrenados." data-en="Guides with over 18 years of experience and well-trained horses." data-fr="Des guides avec plus de 18 ans d'expérience et des chevaux bien dressés.">Guías con más de 18 años de experiencia y caballos bien entrenados.</p>
+          <a href="#experiencias"><span data-es="Ver más" data-en="See more" data-fr="En savoir plus">Ver más</span> <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" style="width:12px;height:12px;"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
         </div>
       </div>
-    </div>
-    <div class="hero-media">
-      <img src="img/hero.jpg" alt="Terraza de Pikera Uri Eco Lodge con vista al jardín y al océano Pacífico">
+      <div class="float-card float-card--quote">
+        <p data-es="«Ubicación fantástica, personal muy amable y unas vistas al océano maravillosas. Muy limpio y encantador.»" data-en="“Fantastic location, friendly staff and wonderful ocean views. Very clean and very charming.”" data-fr="« Emplacement fantastique, personnel très aimable et vues sur l'océan magnifiques. Très propre et charmant. »">«Ubicación fantástica, personal muy amable y unas vistas al océano maravillosas. Muy limpio y encantador.»</p>
+        <div class="quote-person">
+          <span class="avatar-initials">G</span>
+          <div><b>Glambert51</b><span data-es="Huésped verificado" data-en="Verified guest" data-fr="Client vérifié">Huésped verificado</span></div>
+        </div>
+      </div>
     </div>
   </div>
-  <span class="scroll-cue" data-es="DESLIZA" data-en="SCROLL" data-fr="DÉFILER">DESLIZA</span>
+</div>
+
+<section id="bienvenida">
+  <div class="wrap">
+    <span class="tag" data-es="Bienvenido a Rapa Nui" data-en="Welcome to Rapa Nui" data-fr="Bienvenue à Rapa Nui">Bienvenido a Rapa Nui</span>
+    <h2 class="intro-heading" style="margin-top:18px;">
+      <span data-es="Empezamos como un pequeño lodge familiar," data-en="We started as a small family lodge," data-fr="Nous avons commencé comme un petit lodge familial,">Empezamos como un pequeño lodge familiar,</span>
+      <span class="dim" data-es="hoy es el punto de partida para conocer la isla." data-en="today it's the starting point for exploring the island." data-fr="aujourd'hui c'est le point de départ pour découvrir l'île."> hoy es el punto de partida para conocer la isla.</span>
+    </h2>
+    <div class="intro-body">
+      <p data-es="Seis habitaciones grandes y cómodas, jardines con flora nativa y un centro ecuestre propio, a pasos del museo de la isla y de la aldea ceremonial de Tahai." data-en="Six large, comfortable rooms, gardens full of native flora and our own equestrian center, steps from the island's museum and the Tahai ceremonial village." data-fr="Six chambres grandes et confortables, des jardins de flore native et notre propre centre équestre, à deux pas du musée de l'île et du village cérémonial de Tahai.">Seis habitaciones grandes y cómodas, jardines con flora nativa y un centro ecuestre propio, a pasos del museo de la isla y de la aldea ceremonial de Tahai.</p>
+    </div>
+    <div class="intro-media">
+      <img src="img/lodge-aerial.jpg" alt="Caballos junto al lodge de Pikera Uri al atardecer">
+      <img src="img/gallery-1.jpg" alt="Habitación de Pikera Uri Eco Lodge con techo de vigas a la vista">
+    </div>
+    <div class="stats-bar">
+      <div class="stat"><div class="num">6</div><div class="label" data-es="Habitaciones" data-en="Rooms" data-fr="Chambres">Habitaciones</div></div>
+      <div class="stat"><div class="num">18+</div><div class="label" data-es="Años de cabalgatas" data-en="Years of horse rides" data-fr="Années de balades">Años de cabalgatas</div></div>
+      <div class="stat"><div class="num">5</div><div class="label" data-es="Min. caminando a Tahai" data-en="Min. walk to Tahai" data-fr="Min. à pied de Tahai">Min. caminando a Tahai</div></div>
+      <div class="stat"><div class="num">100%</div><div class="label" data-es="Traslado aeropuerto incluido" data-en="Airport transfer included" data-fr="Transfert aéroport inclus">Traslado aeropuerto incluido</div></div>
+    </div>
+  </div>
 </section>
 
-<section class="experiencia section-light" id="experiencia">
+<section id="experiencias">
   <div class="wrap">
-    <div class="quick-card">
-      <div class="quick-card-info">
-        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
-        <div class="quick-card-text">
-          <b data-es="Check-in 15:00 · Check-out 11:00" data-en="Check-in 3:00 pm · Check-out 11:00 am" data-fr="Arrivée 15h00 · Départ 11h00">Check-in 15:00 · Check-out 11:00</b>
-          <span data-es="Sector Tahai, Hanga Roa · +56 9 8411 9080" data-en="Tahai sector, Hanga Roa · +56 9 8411 9080" data-fr="Secteur Tahai, Hanga Roa · +56 9 8411 9080">Sector Tahai, Hanga Roa · +56 9 8411 9080</span>
-        </div>
-      </div>
-      <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-primary" data-es="Reservar ahora" data-en="Book Now" data-fr="Réserver maintenant">Reservar ahora</a>
-    </div>
-    <div class="exp-grid">
+    <div class="section-row">
       <div>
-        <div class="section-head">
-          <h2 data-es="Bienvenido a Pikera Uri" data-en="Welcome to Pikera Uri" data-fr="Bienvenue à Pikera Uri">Bienvenido a Pikera Uri</h2>
-        </div>
-        <div class="exp-copy">
-          <p data-es="Te invitamos a disfrutar de una estancia inolvidable con el mejor servicio en nuestro lodge. Nuestras habitaciones, el jardín y los caballos crean un ambiente único, a pasos del museo de la isla, la costa escarpada y la aldea ceremonial de Tahai." data-en="We invite you to enjoy an unforgettable stay with the best service at our lodge. Our rooms, garden and horses create a unique atmosphere, just steps from the island's museum, the rugged coastline and the ceremonial village of Tahai." data-fr="Nous vous invitons à profiter d'un séjour inoubliable avec le meilleur service dans notre lodge. Nos chambres, notre jardin et nos chevaux créent une ambiance unique, à quelques pas du musée de l'île, de la côte escarpée et du village cérémonial de Tahai.">Te invitamos a disfrutar de una estancia inolvidable con el mejor servicio en nuestro lodge. Nuestras habitaciones, el jardín y los caballos crean un ambiente único, a pasos del museo de la isla, la costa escarpada y la aldea ceremonial de Tahai.</p>
-          <p data-es="El centro de Hanga Roa está a solo 15 minutos de agradable caminata, y desde nuestros jardines podrás disfrutar de algunos de los atardeceres más impresionantes del mundo." data-en="Downtown Hanga Roa is just a pleasant 15-minute walk away, and from our gardens you can enjoy some of the most stunning sunsets in the world." data-fr="Le centre-ville de Hanga Roa n'est qu'à 15 minutes de marche agréable, et depuis nos jardins vous pourrez admirer certains des couchers de soleil les plus impressionnants au monde.">El centro de Hanga Roa está a solo 15 minutos de agradable caminata, y desde nuestros jardines podrás disfrutar de algunos de los atardeceres más impresionantes del mundo.</p>
-        </div>
+        <span class="tag" data-es="Nuestras experiencias" data-en="Our experiences" data-fr="Nos expériences">Nuestras experiencias</span>
+        <h2 data-es="Vive Rapa Nui desde Pikera Uri" data-en="Experience Rapa Nui from Pikera Uri" data-fr="Vivez Rapa Nui depuis Pikera Uri">Vive Rapa Nui desde Pikera Uri</h2>
+        <p data-es="Más que alojamiento: un lodge pensado para explorar la isla." data-en="More than a place to stay: a lodge built for exploring the island." data-fr="Plus qu'un hébergement : un lodge pensé pour explorer l'île.">Más que alojamiento: un lodge pensado para explorar la isla.</p>
       </div>
-      <div class="exp-figures">
-        <div class="exp-figure">
-          <div class="num">6</div>
-          <div class="label" data-es="Habitaciones grandes, cada una con su propio estilo" data-en="Large rooms, each with its own style" data-fr="Grandes chambres, chacune avec son propre style">Habitaciones grandes, cada una con su propio estilo</div>
-        </div>
-        <div class="exp-figure">
-          <div class="num">5</div>
-          <div class="label" data-es="Minutos caminando al Templo Ceremonial Tahai" data-en="Minutes on foot to the Tahai Ceremonial Village" data-fr="Minutes à pied du village cérémonial de Tahai">Minutos caminando al Templo Ceremonial Tahai</div>
-        </div>
-        <div class="exp-figure">
-          <div class="num">18+</div>
-          <div class="label" data-es="Años de experiencia de nuestro centro ecuestre" data-en="Years of experience at our equestrian center" data-fr="Années d'expérience de notre centre équestre">Años de experiencia de nuestro centro ecuestre</div>
-        </div>
-      </div>
+      <a href="#galeria" class="btn-pill btn-pill--dark">
+        <span data-es="Ver galería" data-en="See gallery" data-fr="Voir la galerie">Ver galería</span>
+        <span class="pip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span>
+      </a>
     </div>
-  </div>
-</section>
-
-<section class="ubicacion-teaser" id="ubicacion-privilegiada">
-  <div class="wrap teaser-grid">
-    <div class="teaser-media">
-      <img src="img/sunset-palm.jpg" alt="Atardecer entre palmeras cerca de Pikera Uri Eco Lodge, Hanga Roa">
-    </div>
-    <div class="teaser-copy">
-      <div class="section-head" style="margin-bottom:0;">
-        <h2 data-es="Ubicación privilegiada" data-en="A privileged location" data-fr="Un emplacement privilégié">Ubicación privilegiada</h2>
-      </div>
-      <p data-es="Estamos a pocos minutos a pie del museo de clase mundial de la isla, la costa escarpada y la aldea ceremonial de Tahai — uno de los mejores puntos para ver el atardecer en Rapa Nui." data-en="We are just a few minutes' walk from the island's world-class museum, the rugged coastline and the ceremonial village of Tahai — one of the best spots to watch the sunset in Rapa Nui." data-fr="Nous sommes à quelques minutes à pied du musée de classe mondiale de l'île, de la côte escarpée et du village cérémonial de Tahai — l'un des meilleurs points pour admirer le coucher de soleil à Rapa Nui.">Estamos a pocos minutos a pie del museo de clase mundial de la isla, la costa escarpada y la aldea ceremonial de Tahai — uno de los mejores puntos para ver el atardecer en Rapa Nui.</p>
-      <ul class="teaser-list">
-        <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg></span><span data-es="A pasos del Museo Antropológico Sebastián Englert" data-en="Steps from the Sebastián Englert Anthropological Museum" data-fr="À deux pas du musée anthropologique Sebastián Englert">A pasos del Museo Antropológico Sebastián Englert</span></li>
-        <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg></span><span data-es="Cerca de la costa escarpada y la aldea ceremonial de Tahai" data-en="Near the rugged coastline and the Tahai ceremonial village" data-fr="Près de la côte escarpée et du village cérémonial de Tahai">Cerca de la costa escarpada y la aldea ceremonial de Tahai</span></li>
-        <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg></span><span data-es="A 15 minutos caminando del centro de Hanga Roa" data-en="A 15-minute walk from downtown Hanga Roa" data-fr="À 15 minutes à pied du centre de Hanga Roa">A 15 minutos caminando del centro de Hanga Roa</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="comodidades section-light" id="comodidades">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 data-es="Nuestras comodidades e instalaciones" data-en="Our amenities and facilities" data-fr="Nos équipements et installations">Nuestras comodidades e instalaciones</h2>
-    </div>
-  </div>
-  <div class="wrap" style="padding:0;">
-    <div class="feature-grid">
-      <div class="feature-card">
-        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="11" width="18" height="8" rx="1.5"/><path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3M3 19v2M21 19v2"/></svg></span>
+    <div class="exp-cards">
+      <div class="exp-card">
+        <img src="img/gallery-2.jpg" alt="Habitación de Pikera Uri Eco Lodge">
         <h3 data-es="Habitaciones" data-en="Rooms" data-fr="Chambres">Habitaciones</h3>
-        <p data-es="Seis habitaciones grandes y cómodas para 1 a 4 personas, cada una con su propia decoración y estilo." data-en="Six large, comfortable rooms for 1 to 4 guests, each with its own decor and style." data-fr="Six chambres grandes et confortables pour 1 à 4 personnes, chacune avec sa propre décoration.">Seis habitaciones grandes y cómodas para 1 a 4 personas, cada una con su propia decoración y estilo.</p>
-        <a href="#habitaciones"><span data-es="Ver habitaciones" data-en="See rooms" data-fr="Voir les chambres">Ver habitaciones</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+        <p data-es="Seis habitaciones con terraza, vista al jardín y al océano." data-en="Six rooms with a terrace, garden and ocean views." data-fr="Six chambres avec terrasse, vue sur le jardin et l'océan.">Seis habitaciones con terraza, vista al jardín y al océano.</p>
+        <span class="badge" data-es="6 habitaciones disponibles" data-en="6 rooms available" data-fr="6 chambres disponibles">6 habitaciones disponibles</span>
       </div>
-      <div class="feature-card">
-        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 19c2-5 4-8 8-8s6 3 8 8"/><circle cx="8.5" cy="8" r="2.2"/><path d="M11 10.5 13 8"/></svg></span>
-        <h3 data-es="Paseos a caballo" data-en="Horseback rides" data-fr="Balades à cheval">Paseos a caballo</h3>
-        <p data-es="El centro ecuestre Cabalgatas Pantu funciona en el mismo lodge, con guías experimentados y caballos bien entrenados." data-en="The Cabalgatas Pantu equestrian center operates right at the lodge, with experienced guides and well-trained horses." data-fr="Le centre équestre Cabalgatas Pantu opère directement au lodge, avec des guides expérimentés et des chevaux bien dressés.">El centro ecuestre Cabalgatas Pantu funciona en el mismo lodge, con guías experimentados y caballos bien entrenados.</p>
-        <a href="#cabalgatas"><span data-es="Descubre los tours" data-en="Discover the tours" data-fr="Découvrir les tours">Descubre los tours</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+      <div class="exp-card">
+        <img src="img/cabalgata.jpg" alt="Cabalgata guiada por Cabalgatas Pantu">
+        <h3 data-es="Cabalgatas Pantu" data-en="Cabalgatas Pantu" data-fr="Cabalgatas Pantu">Cabalgatas Pantu</h3>
+        <p data-es="Excursiones guiadas por los sitios arqueológicos de la isla." data-en="Guided excursions to the island's archaeological sites." data-fr="Excursions guidées vers les sites archéologiques de l'île.">Excursiones guiadas por los sitios arqueológicos de la isla.</p>
+        <span class="badge" data-es="18+ años de experiencia" data-en="18+ years of experience" data-fr="18+ ans d'expérience">18+ años de experiencia</span>
       </div>
-      <div class="feature-card">
-        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 17V9l2-4h12l2 4v8M4 17h16M6 17v2M18 17v2"/><circle cx="7.5" cy="14" r="1.2"/><circle cx="16.5" cy="14" r="1.2"/></svg></span>
+      <div class="exp-card">
+        <img src="img/breakfast.jpg" alt="Vehículos de Pikera Uri Rent a Car disponibles para huéspedes">
         <h3 data-es="Alquiler de autos" data-en="Car rental" data-fr="Location de voitures">Alquiler de autos</h3>
-        <p data-es="Pikera Uri Rent a Car ofrece una selección de vehículos reservados en exclusiva para nuestros huéspedes." data-en="Pikera Uri Rent a Car offers a selection of vehicles reserved exclusively for our guests." data-fr="Pikera Uri Rent a Car propose une sélection de véhicules réservés exclusivement à nos clients.">Pikera Uri Rent a Car ofrece una selección de vehículos reservados en exclusiva para nuestros huéspedes.</p>
-        <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener"><span data-es="Consultar disponibilidad" data-en="Check availability" data-fr="Vérifier la disponibilité">Consultar disponibilidad</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+        <p data-es="Vehículos reservados en exclusiva para huéspedes del lodge." data-en="Vehicles reserved exclusively for lodge guests." data-fr="Véhicules réservés exclusivement aux clients du lodge.">Vehículos reservados en exclusiva para huéspedes del lodge.</p>
+        <span class="badge" data-es="4 vehículos exclusivos" data-en="4 exclusive vehicles" data-fr="4 véhicules exclusifs">4 vehículos exclusivos</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="rooms section-light" id="habitaciones">
+<section id="habitaciones" style="padding-top:0;">
   <div class="wrap">
-    <div class="section-head">
-      <h2 data-es="Habitaciones espaciosas con vista" data-en="Spacious rooms with a view" data-fr="Chambres spacieuses avec vue">Habitaciones espaciosas con vista</h2>
-    </div>
-    <div class="rooms-grid">
-      <div class="rooms-media"><img src="img/room-b.jpg" alt="Habitación de Pikera Uri Eco Lodge con vigas de madera a la vista"></div>
-      <div class="rooms-media">
-        <img src="img/living-room.jpg" alt="Sala de estar de Pikera Uri Eco Lodge">
-        <img src="img/gallery-2.jpg" alt="Detalle de una habitación de Pikera Uri Eco Lodge">
+    <div class="section-row">
+      <div>
+        <span class="tag" data-es="Habitaciones" data-en="Rooms" data-fr="Chambres">Habitaciones</span>
+        <h2 data-es="Seis habitaciones, cada una distinta" data-en="Six rooms, each one different" data-fr="Six chambres, chacune différente">Seis habitaciones, cada una distinta</h2>
+        <p data-es="Cada habitación tiene su propia decoración y estilo. Estamos preparando una ficha individual para cada una — mientras tanto, escríbenos y te contamos cuál se ajusta mejor a tu grupo." data-en="Each room has its own decor and style. We're preparing an individual page for each one — in the meantime, message us and we'll help you find the best fit." data-fr="Chaque chambre a sa propre décoration et son style. Nous préparons une fiche individuelle pour chacune — en attendant, écrivez-nous.">Cada habitación tiene su propia decoración y estilo. Estamos preparando una ficha individual para cada una — mientras tanto, escríbenos y te contamos cuál se ajusta mejor a tu grupo.</p>
       </div>
+      <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-pill btn-pill--accent">
+        <span data-es="Reservar ahora" data-en="Book Now" data-fr="Réserver maintenant">Reservar ahora</span>
+        <span class="pip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span>
+      </a>
     </div>
-    <div class="rooms-copy">
-      <p data-es="Cada una de nuestras seis habitaciones tiene su propia decoración y estilo armónico, ideal para relajarse después de un día de turismo. Estamos muy cerca del mar, y desde tu balcón podrás disfrutar de vistas al jardín, al Pacífico y a atardeceres impresionantes. Cada mañana, los caballos llegan al área del lodge, sumando un toque místico a la estadía." data-en="Each of our six rooms has its own decor and harmonious style, ideal for relaxing after a day of sightseeing. We are very close to the sea, and from your balcony you can enjoy views of the garden, the Pacific and stunning sunsets. Every morning, the horses arrive at the lodge, adding a mystical touch to your stay." data-fr="Chacune de nos six chambres a sa propre décoration et son style harmonieux, idéal pour se détendre après une journée de tourisme. Nous sommes très proches de la mer, et depuis votre balcon vous pouvez profiter de vues sur le jardin, le Pacifique et des couchers de soleil impressionnants. Chaque matin, les chevaux arrivent au lodge, ajoutant une touche mystique à votre séjour.">Cada una de nuestras seis habitaciones tiene su propia decoración y estilo armónico, ideal para relajarse después de un día de turismo. Estamos muy cerca del mar, y desde tu balcón podrás disfrutar de vistas al jardín, al Pacífico y a atardeceres impresionantes. Cada mañana, los caballos llegan al área del lodge, sumando un toque místico a la estadía.</p>
-      <ul class="amenity-list">
-        <li><h4 data-es="Servicios de la habitación" data-en="Room amenities" data-fr="Services de la chambre">Servicios de la habitación</h4></li>
-        <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12l4 4L19 6"/></svg></span><span data-es="Terraza equipada con vista al jardín y al océano" data-en="Equipped terrace with garden and ocean view" data-fr="Terrasse équipée avec vue sur le jardin et l'océan">Terraza equipada con vista al jardín y al océano</span></li>
-        <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12l4 4L19 6"/></svg></span><span data-es="Armario grande y caja fuerte" data-en="Large wardrobe and safe" data-fr="Grand placard et coffre-fort">Armario grande y caja fuerte</span></li>
-        <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12l4 4L19 6"/></svg></span><span data-es="Refrigerador, set de té o café y TV" data-en="Refrigerator, tea/coffee set and TV" data-fr="Réfrigérateur, plateau thé/café et TV">Refrigerador, set de té o café y TV</span></li>
-        <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12l4 4L19 6"/></svg></span><span data-es="Baño grande con bañera, toallas y secador" data-en="Large bathroom with bathtub, towels and hairdryer" data-fr="Grande salle de bain avec baignoire, serviettes et sèche-cheveux">Baño grande con bañera, toallas y secador</span></li>
-      </ul>
-      <ul class="amenity-list">
-        <li><h4 data-es="Servicios incluidos" data-en="Included services" data-fr="Services inclus">Servicios incluidos</h4></li>
-        <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12l4 4L19 6"/></svg></span><span data-es="Traslado aeropuerto ida y vuelta" data-en="Round-trip airport transfer" data-fr="Transfert aéroport aller-retour">Traslado aeropuerto ida y vuelta</span></li>
-        <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12l4 4L19 6"/></svg></span><span data-es="Bienvenida con jugos frescos y collar de flores" data-en="Welcome with fresh juices and a flower necklace" data-fr="Accueil avec jus frais et collier de fleurs">Bienvenida con jugos frescos y collar de flores</span></li>
-        <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12l4 4L19 6"/></svg></span><span data-es="Desayuno buffet y WiFi en áreas comunes" data-en="Buffet breakfast and WiFi in common areas" data-fr="Petit-déjeuner buffet et WiFi dans les espaces communs">Desayuno buffet y WiFi en áreas comunes</span></li>
-        <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12l4 4L19 6"/></svg></span><span data-es="Toallas de playa, estacionamiento y BBQ común" data-en="Beach towels, parking and shared BBQ" data-fr="Serviettes de plage, parking et barbecue commun">Toallas de playa, estacionamiento y BBQ común</span></li>
-      </ul>
+    <div class="intro-media" style="grid-template-columns:repeat(4,1fr);">
+      <img src="img/gallery-1.jpg" alt="Habitación de Pikera Uri Eco Lodge con techo de vigas a la vista" style="height:220px;">
+      <img src="img/gallery-2.jpg" alt="Habitación de Pikera Uri Eco Lodge con dos camas" style="height:220px;">
+      <img src="img/gallery-4.jpg" alt="Habitación de Pikera Uri Eco Lodge" style="height:220px;">
+      <img src="img/gallery-3.jpg" alt="Baño de una habitación de Pikera Uri Eco Lodge" style="height:220px;">
     </div>
-    <p class="rooms-note" data-es="Cada habitación tiene su propio nombre, tarifa y galería — estamos preparando una ficha individual para cada una. Mientras tanto, escríbenos y te contamos cuál se ajusta mejor a tu grupo." data-en="Each room has its own name, rate and gallery — we're preparing an individual page for each one. In the meantime, message us and we'll help you find the best fit for your group." data-fr="Chaque chambre a son propre nom, tarif et galerie — nous préparons une fiche individuelle pour chacune. En attendant, écrivez-nous et nous vous aiderons à trouver la chambre idéale pour votre groupe.">Cada habitación tiene su propio nombre, tarifa y galería — estamos preparando una ficha individual para cada una. Mientras tanto, escríbenos y te contamos cuál se ajusta mejor a tu grupo.</p>
   </div>
 </section>
 
-<section class="horses" id="cabalgatas">
-  <div class="wrap teaser-grid reverse">
-    <div class="teaser-copy">
-      <div class="section-head" style="margin-bottom:0;">
-        <h2 data-es="Cabalgatas Pantu" data-en="Cabalgatas Pantu" data-fr="Cabalgatas Pantu">Cabalgatas Pantu</h2>
+<div class="testimonial-section" id="testimonios">
+  <div class="testimonial-track">
+    <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+    <p class="quote-text" id="quote-text"></p>
+    <div class="testimonial-person">
+      <span class="avatar-initials" id="quote-avatar"></span>
+      <b id="quote-name"></b>
+      <span id="quote-role" data-es="Huésped verificado" data-en="Verified guest" data-fr="Client vérifié">Huésped verificado</span>
+    </div>
+  </div>
+  <div class="carousel-arrows">
+    <button id="quote-prev" aria-label="Anterior / Previous / Précédent"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5l-5 5 5 5"/></svg></button>
+    <button id="quote-next" aria-label="Siguiente / Next / Suivant"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 5l5 5-5 5"/></svg></button>
+  </div>
+</div>
+
+<section id="incluido">
+  <div class="wrap">
+    <div class="section-row">
+      <div>
+        <span class="tag" data-es="Todo incluido" data-en="All included" data-fr="Tout inclus">Todo incluido</span>
+        <h2 data-es="Lo que incluye tu estadía" data-en="What's included in your stay" data-fr="Ce qui est inclus dans votre séjour">Lo que incluye tu estadía</h2>
       </div>
-      <p data-es="Nuestro centro ecuestre está ubicado en el mismo lodge. Con más de 18 años de experiencia y equipamiento de primera calidad, nuestros guías te aseguran un paseo seguro por la isla, incluso si nunca has montado antes." data-en="Our equestrian center is located right at the lodge. With over 18 years of experience and top-quality equipment, our guides ensure a safe ride around the island, even if you've never ridden before." data-fr="Notre centre équestre se trouve directement au lodge. Avec plus de 18 ans d'expérience et un équipement de première qualité, nos guides vous garantissent une balade en toute sécurité, même si vous n'avez jamais monté à cheval.">Nuestro centro ecuestre está ubicado en el mismo lodge. Con más de 18 años de experiencia y equipamiento de primera calidad, nuestros guías te aseguran un paseo seguro por la isla, incluso si nunca has montado antes.</p>
-      <ul class="teaser-list">
-        <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12l4 4L19 6"/></svg></span><span data-es="Guías experimentados y caballos bien entrenados" data-en="Experienced guides and well-trained horses" data-fr="Guides expérimentés et chevaux bien dressés">Guías experimentados y caballos bien entrenados</span></li>
-        <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12l4 4L19 6"/></svg></span><span data-es="Traslados incluidos desde y hacia tu hotel" data-en="Transfers to and from your hotel included" data-fr="Transferts aller-retour depuis votre hôtel inclus">Traslados incluidos desde y hacia tu hotel</span></li>
-        <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12l4 4L19 6"/></svg></span><span data-es="Excursiones guiadas por los sitios arqueológicos de la isla" data-en="Guided excursions to the island's archaeological sites" data-fr="Excursions guidées vers les sites archéologiques de l'île">Excursiones guiadas por los sitios arqueológicos de la isla</span></li>
-      </ul>
-      <div class="hero-actions" style="margin-top:30px;">
-        <a href="tel:+56984119080" class="btn-outline">
-          <span data-es="Consultar tours" data-en="Ask about tours" data-fr="Demander les tours">Consultar tours</span>
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+    </div>
+    <div class="included-grid">
+      <div class="included-hero">
+        <img src="img/horses-herd.jpg" alt="Detalle de una habitación de Pikera Uri Eco Lodge con flores de bienvenida">
+        <div class="included-hero-text">
+          <h3 data-es="Bienvenida con collar de flores" data-en="Welcome with a flower necklace" data-fr="Accueil avec un collier de fleurs">Bienvenida con collar de flores</h3>
+          <p data-es="Traslado aeropuerto ida y vuelta, jugos frescos y orientación con mapa de la isla." data-en="Round-trip airport transfer, fresh juices and orientation with an island map." data-fr="Transfert aéroport aller-retour, jus frais et orientation avec une carte de l'île.">Traslado aeropuerto ida y vuelta, jugos frescos y orientación con mapa de la isla.</p>
+        </div>
+      </div>
+      <div class="included-list">
+        <div class="included-item">
+          <img src="img/dining-ocean.jpg" alt="Mesa de desayuno de Pikera Uri Eco Lodge con vista al océano">
+          <div>
+            <h4 data-es="Desayuno buffet" data-en="Buffet breakfast" data-fr="Petit-déjeuner buffet">Desayuno buffet</h4>
+            <p data-es="Todas las mañanas, incluido en tu estadía." data-en="Every morning, included in your stay." data-fr="Chaque matin, inclus dans votre séjour.">Todas las mañanas, incluido en tu estadía.</p>
+            <a href="#habitaciones"><span data-es="Ver habitaciones" data-en="See rooms" data-fr="Voir les chambres">Ver habitaciones</span> <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" style="width:11px;height:11px;"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+          </div>
+        </div>
+        <div class="included-item">
+          <img src="img/room-b.jpg" alt="Área común de Pikera Uri Eco Lodge">
+          <div>
+            <h4 data-es="WiFi, toallas de playa y BBQ" data-en="WiFi, beach towels and BBQ" data-fr="WiFi, serviettes de plage et barbecue">WiFi, toallas de playa y BBQ</h4>
+            <p data-es="En las áreas comunes, para huéspedes del lodge." data-en="In the common areas, for lodge guests." data-fr="Dans les espaces communs, pour les clients du lodge.">En las áreas comunes, para huéspedes del lodge.</p>
+            <a href="#habitaciones"><span data-es="Ver habitaciones" data-en="See rooms" data-fr="Voir les chambres">Ver habitaciones</span> <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" style="width:11px;height:11px;"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="wrap">
+    <div class="section-row">
+      <div>
+        <span class="tag" data-es="Galería" data-en="Gallery" data-fr="Galerie">Galería</span>
+        <h2 data-es="Un vistazo a Pikera Uri" data-en="A look at Pikera Uri" data-fr="Un aperçu de Pikera Uri">Un vistazo a Pikera Uri</h2>
+      </div>
+    </div>
+    <div class="intro-media" style="grid-template-columns:repeat(4,1fr);">
+      <img src="img/sunset-palm.jpg" alt="Jardín de Pikera Uri Eco Lodge al atardecer" style="height:220px;">
+      <img src="img/lodge-aerial.jpg" alt="Caballos junto al lodge de Pikera Uri al atardecer" style="height:220px;">
+      <img src="img/living-room.jpg" alt="Sala de estar de Pikera Uri Eco Lodge" style="height:220px;">
+      <img src="img/cabalgata.jpg" alt="Cabalgata guiada por Cabalgatas Pantu en Rapa Nui" style="height:220px;">
+    </div>
+  </div>
+</section>
+
+<section id="ubicacion" style="padding-top:0;">
+  <div class="wrap">
+    <div class="cta-band">
+      <img src="img/hero.jpg" alt="Terraza de Pikera Uri Eco Lodge con vista al océano Pacífico">
+      <h2 data-es="Reserva tu escapada en Rapa Nui" data-en="Book your Rapa Nui getaway" data-fr="Réservez votre escapade à Rapa Nui">Reserva tu escapada en Rapa Nui</h2>
+      <p data-es="Sector Tahai, Hanga Roa — disponibilidad y pago en línea las 24 horas, con confirmación inmediata." data-en="Tahai sector, Hanga Roa — 24-hour online availability and payment, with instant confirmation." data-fr="Secteur Tahai, Hanga Roa — disponibilité et paiement en ligne 24h/24, confirmation immédiate.">Sector Tahai, Hanga Roa — disponibilidad y pago en línea las 24 horas, con confirmación inmediata.</p>
+      <div class="cta-actions">
+        <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-pill btn-pill--accent">
+          <span data-es="Reservar y pagar" data-en="Book & Pay" data-fr="Réserver et payer">Reservar y pagar</span>
+          <span class="pip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span>
+        </a>
+        <a href="https://wa.me/56984119080" target="_blank" rel="noopener" class="btn-pill btn-pill--outline">
+          <span data-es="Escríbenos" data-en="Message us" data-fr="Écrivez-nous">Escríbenos</span>
+          <span class="pip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21l1.4-4.6A8 8 0 1 1 8.6 19.6L3 21z"/></svg></span>
         </a>
       </div>
     </div>
-    <div class="teaser-media">
-      <img src="img/cabalgata.jpg" alt="Cabalgata guiada por Cabalgatas Pantu en Pikera Uri Eco Lodge, Rapa Nui">
-    </div>
-  </div>
-</section>
-
-<section class="gallery section-light" id="galeria">
-  <div class="wrap">
-    <div class="section-head gallery-head">
-      <h2 data-es="Galería" data-en="Gallery" data-fr="Galerie">Galería</h2>
-    </div>
-    <div class="gallery-tabs" role="tablist">
-      <button class="gallery-tab active" data-filter="todas" data-es="Todas" data-en="All" data-fr="Toutes">Todas</button>
-      <button class="gallery-tab" data-filter="habitaciones" data-es="Habitaciones" data-en="Rooms" data-fr="Chambres">Habitaciones</button>
-      <button class="gallery-tab" data-filter="jardines" data-es="Jardines y Lodge" data-en="Gardens & Lodge" data-fr="Jardins et Lodge">Jardines y Lodge</button>
-      <button class="gallery-tab" data-filter="cabalgatas" data-es="Cabalgatas" data-en="Horseback Rides" data-fr="Balades à cheval">Cabalgatas</button>
-      <button class="gallery-tab" data-filter="gastronomia" data-es="Gastronomía" data-en="Food" data-fr="Gastronomie">Gastronomía</button>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-item" data-cat="habitaciones"><img src="img/gallery-1.jpg" alt="Habitación de Pikera Uri Eco Lodge"></div>
-      <div class="gallery-item" data-cat="habitaciones"><img src="img/room-b.jpg" alt="Habitación con vigas de madera de Pikera Uri Eco Lodge"></div>
-      <div class="gallery-item" data-cat="habitaciones"><img src="img/living-room.jpg" alt="Sala de estar de Pikera Uri Eco Lodge"></div>
-      <div class="gallery-item" data-cat="habitaciones"><img src="img/gallery-2.jpg" alt="Detalle de habitación de Pikera Uri Eco Lodge"></div>
-      <div class="gallery-item" data-cat="jardines"><img src="img/lodge-aerial.jpg" alt="Vista aérea de Pikera Uri Eco Lodge entre palmeras"></div>
-      <div class="gallery-item" data-cat="jardines"><img src="img/lodge-field.jpg" alt="Pikera Uri Eco Lodge rodeado de jardines nativos"></div>
-      <div class="gallery-item" data-cat="jardines"><img src="img/sunset-palm.jpg" alt="Atardecer entre palmeras en Pikera Uri Eco Lodge"></div>
-      <div class="gallery-item" data-cat="jardines"><img src="img/gallery-4.jpg" alt="Jardín de Pikera Uri Eco Lodge"></div>
-      <div class="gallery-item" data-cat="cabalgatas"><img src="img/cabalgata.jpg" alt="Cabalgata guiada por Cabalgatas Pantu"></div>
-      <div class="gallery-item" data-cat="cabalgatas"><img src="img/horse-girl.jpg" alt="Huésped paseando a caballo en Pikera Uri Eco Lodge"></div>
-      <div class="gallery-item" data-cat="cabalgatas"><img src="img/horses-herd.jpg" alt="Caballos de Pikera Uri Eco Lodge"></div>
-      <div class="gallery-item" data-cat="gastronomia"><img src="img/dining-ocean.jpg" alt="Comedor de Pikera Uri Eco Lodge con vista al océano"></div>
-      <div class="gallery-item" data-cat="gastronomia"><img src="img/food-prep.jpg" alt="Preparación de desayuno en Pikera Uri Eco Lodge"></div>
-      <div class="gallery-item" data-cat="gastronomia"><img src="img/breakfast.jpg" alt="Desayuno buffet de Pikera Uri Eco Lodge"></div>
-      <div class="gallery-item" data-cat="gastronomia"><img src="img/gallery-3.jpg" alt="Mesa de desayuno de Pikera Uri Eco Lodge"></div>
-    </div>
-  </div>
-</section>
-
-<section class="reviews" id="testimonios">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 data-es="Lo que dicen nuestros huéspedes" data-en="What our guests say" data-fr="Ce que disent nos clients">Lo que dicen nuestros huéspedes</h2>
-    </div>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="review-stars" aria-hidden="true">
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-        </div>
-        <p data-es="«Desde el recibimiento en el aeropuerto con un collar de flores hasta el traslado de regreso tres días después, nuestra estadía en Pikera Uri fue excelente. La habitación es cómoda, el lodge está junto a los sitios más importantes de la isla y el desayuno es realmente delicioso.»" data-en="“From the airport pickup with a flower necklace to the drop-off three days later, our stay at Pikera Uri was excellent. The room is comfortable, the lodge is right next to all the important sites on the island, and breakfast is really tasty.”" data-fr="« Depuis l'accueil à l'aéroport avec un collier de fleurs jusqu'au retour trois jours plus tard, notre séjour à Pikera Uri a été excellent. La chambre est confortable, le lodge est à côté des sites les plus importants de l'île et le petit-déjeuner est vraiment délicieux. »">«Desde el recibimiento en el aeropuerto con un collar de flores hasta el traslado de regreso tres días después, nuestra estadía en Pikera Uri fue excelente. La habitación es cómoda, el lodge está junto a los sitios más importantes de la isla y el desayuno es realmente delicioso.»</p>
-        <div class="review-name">ErikaCecil D.</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars" aria-hidden="true">
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-        </div>
-        <p data-es="«Gran personal, precios razonables, habitaciones cómodas y un gran desayuno. Muy recomendable. También arrendamos un auto con Pikera Uri y estaba en excelentes condiciones. Toda la experiencia fue relajada y renovadora.»" data-en="“Great staff, reasonably priced, comfortable rooms and a great breakfast. Would highly recommend. We also rented a car from Pikera Uri and it was in great condition. The overall experience was relaxed and refreshing.”" data-fr="« Personnel formidable, prix raisonnables, chambres confortables et excellent petit-déjeuner. Je recommande vivement. Nous avons aussi loué une voiture chez Pikera Uri, en parfait état. L'expérience globale était détendue et ressourçante. »">«Gran personal, precios razonables, habitaciones cómodas y un gran desayuno. Muy recomendable. También arrendamos un auto con Pikera Uri y estaba en excelentes condiciones. Toda la experiencia fue relajada y renovadora.»</p>
-        <div class="review-name">Benjamin B.</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars" aria-hidden="true">
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-        </div>
-        <p data-es="«Ubicación fantástica. Lo suficientemente cerca del pueblo para caminar. A 200 metros del sitio de Tahai. Personal amable y feliz. Vistas maravillosas al océano. Muy limpio y encantador. Desayunos abundantes y muy buenos.»" data-en="“Fantastic location. Close enough to town to walk. 200 meters from Tahai site. Friendly happy staff. Wonderful ocean views. Very clean and very charming. Great and plentiful breakfasts.”" data-fr="« Emplacement fantastique. Assez proche du village pour y aller à pied. À 200 mètres du site de Tahai. Personnel amical. Vues magnifiques sur l'océan. Très propre et charmant. Petits-déjeuners copieux et excellents. »">«Ubicación fantástica. Lo suficientemente cerca del pueblo para caminar. A 200 metros del sitio de Tahai. Personal amable y feliz. Vistas maravillosas al océano. Muy limpio y encantador. Desayunos abundantes y muy buenos.»</p>
-        <div class="review-name">Glambert51</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars" aria-hidden="true">
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.5l2.6 5.5 6 .7-4.4 4.1 1.2 6-5.4-3-5.4 3 1.2-6L1.4 7.7l6-.7z"/></svg>
-        </div>
-        <p data-es="«Este eco lodge fue un lugar absolutamente maravilloso para alojarse en Rapa Nui. El alojamiento es hermoso, el personal muy hospitalario, la ubicación increíble y creo que es el mejor lugar de toda la isla. ¡Lo recomiendo totalmente!»" data-en="“This eco lodge was an absolutely wonderful place to stay on Rapa Nui. The accommodations were beautiful, the staff were so hospitable, the location is amazing and the best spot to be on the whole island I think. I absolutely recommend staying at Pikera Uri!”" data-fr="« Cet éco-lodge était un endroit absolument merveilleux pour séjourner à Rapa Nui. L'hébergement est magnifique, le personnel très accueillant, l'emplacement incroyable — je pense que c'est le meilleur endroit de toute l'île. Je recommande vivement Pikera Uri ! »">«Este eco lodge fue un lugar absolutamente maravilloso para alojarse en Rapa Nui. El alojamiento es hermoso, el personal muy hospitalario, la ubicación increíble y creo que es el mejor lugar de toda la isla. ¡Lo recomiendo totalmente!»</p>
-        <div class="review-name">Adrielle S.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="location section-light" id="ubicacion">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 data-es="Encuéntranos en Hanga Roa" data-en="Find us in Hanga Roa" data-fr="Trouvez-nous à Hanga Roa">Encuéntranos en Hanga Roa</h2>
-    </div>
-    <div class="location-grid">
-      <div class="location-info">
-        <h3>Pikera Uri Eco Lodge</h3>
-        <ul class="location-list">
-          <li><b data-es="Dirección" data-en="Address" data-fr="Adresse">Dirección</b> <span data-es="Sector Tahai, Hanga Roa, Isla de Pascua, Chile" data-en="Tahai sector, Hanga Roa, Easter Island, Chile" data-fr="Secteur Tahai, Hanga Roa, Île de Pâques, Chili">Sector Tahai, Hanga Roa, Isla de Pascua, Chile</span></li>
-          <li><b data-es="Check-in / Check-out" data-en="Check-in / Check-out" data-fr="Arrivée / Départ">Check-in / Check-out</b> <span data-es="15:00 hrs / 11:00 hrs" data-en="3:00 pm / 11:00 am" data-fr="15h00 / 11h00">15:00 hrs / 11:00 hrs</span></li>
-          <li><b data-es="Teléfono" data-en="Phone" data-fr="Téléphone">Teléfono</b> +56 9 8411 9080</li>
-        </ul>
-        <p data-es="A pasos del Templo Ceremonial Tahai y a 15 minutos caminando del centro de Hanga Roa — el mejor punto de la isla para ver caer el sol." data-en="Steps from the Tahai Ceremonial Village and a 15-minute walk from downtown Hanga Roa — the island's best spot to watch the sunset." data-fr="À deux pas du village cérémonial de Tahai et à 15 minutes à pied du centre de Hanga Roa — le meilleur endroit de l'île pour voir le coucher de soleil.">A pasos del Templo Ceremonial Tahai y a 15 minutos caminando del centro de Hanga Roa — el mejor punto de la isla para ver caer el sol.</p>
-        <div class="location-actions">
-          <a class="btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=Pikera+Uri+Eco+Lodge%2C+Hanga+Roa%2C+Isla+de+Pascua%2C+Chile" target="_blank" rel="noopener">
-            <span data-es="Cómo llegar" data-en="Get directions" data-fr="Itinéraire">Cómo llegar</span>
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
-          </a>
-        </div>
-      </div>
-      <div class="map-embed">
-        <iframe
-          src="https://www.google.com/maps?q=Pikera+Uri+Eco+Lodge,+Hanga+Roa,+Isla+de+Pascua,+Chile&z=15&t=m&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Ubicación de Pikera Uri Eco Lodge en Hanga Roa">
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-band">
-  <div class="wrap">
-    <h2 data-es="Reserva tu escapada en Rapa Nui" data-en="Book your Rapa Nui getaway" data-fr="Réservez votre escapade à Rapa Nui">Reserva tu escapada en Rapa Nui</h2>
-    <p data-es="Disponibilidad y precios en línea las 24 horas. Confirmación inmediata a través de nuestro motor de reservas." data-en="Availability and rates online 24 hours a day. Instant confirmation through our booking engine." data-fr="Disponibilité et tarifs en ligne 24h/24. Confirmation immédiate via notre moteur de réservation.">Disponibilidad y precios en línea las 24 horas. Confirmación inmediata a través de nuestro motor de reservas.</p>
-    <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-primary" data-es="Reservar ahora" data-en="Book Now" data-fr="Réserver maintenant">Reservar ahora</a>
-    <div class="cta-socials">
-      <a href="https://www.instagram.com/pikerauri/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
-      </a>
-      <a href="https://www.facebook.com/people/Pik-Uri/100012678033386/" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h-2a5 5 0 0 0-5 5v2H6v4h2v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3z"/></svg>
-      </a>
-      <a href="https://wa.me/56984119080" target="_blank" rel="noopener" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21l1.4-4.6A8 8 0 1 1 8.6 19.6L3 21z"/><path d="M8.5 9.5c.5 2.5 2.5 4.5 5 5l1-1.2c.2-.2.5-.3.8-.2l2 .7c.3.1.5.4.5.7v1.4c0 .6-.5 1-1 1-4.5 0-9-4.5-9-9 0-.5.4-1 1-1h1.4c.3 0 .6.2.7.5l.7 2c.1.3 0 .6-.2.8z"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contacto">
-  <div class="wrap contact-grid">
-    <div class="contact-copy">
-      <h2 style="font-size:clamp(2rem,3.5vw,2.6rem); font-family:var(--serif); color:var(--ink);" data-es="¿Tienes preguntas?" data-en="Have questions?" data-fr="Des questions ?">¿Tienes preguntas?</h2>
-      <p data-es="Escríbenos y te responderemos a la brevedad. Para reservar directamente, usa el botón de reservas — la disponibilidad y tarifas están siempre actualizadas ahí." data-en="Send us a message and we'll get back to you shortly. To book directly, use the booking button — availability and rates are always up to date there." data-fr="Écrivez-nous et nous vous répondrons rapidement. Pour réserver directement, utilisez le bouton de réservation — la disponibilité et les tarifs y sont toujours à jour.">Escríbenos y te responderemos a la brevedad. Para reservar directamente, usa el botón de reservas — la disponibilidad y tarifas están siempre actualizadas ahí.</p>
-    </div>
-    <!-- Reemplaza el endpoint de Formspree por el propio de Pikera Uri antes de publicar (formspree.io -> crear formulario nuevo) -->
-    <form id="contact-form" action="https://formspree.io/f/REEMPLAZAR_ID" method="POST">
-      <div class="form-row">
-        <div>
-          <label for="nombre" data-es="Nombre completo" data-en="Full name" data-fr="Nom complet">Nombre completo</label>
-          <input type="text" id="nombre" name="nombre" required>
-        </div>
-        <div>
-          <label for="telefono" data-es="Teléfono" data-en="Phone" data-fr="Téléphone">Teléfono</label>
-          <input type="tel" id="telefono" name="telefono" required>
-        </div>
-      </div>
-      <div class="form-row">
-        <div>
-          <label for="email" data-es="Correo electrónico" data-en="Email" data-fr="E-mail">Correo electrónico</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-          <label for="personas" data-es="N.º de personas" data-en="Number of guests" data-fr="Nombre de personnes">N.º de personas</label>
-          <select id="personas" name="personas" required>
-            <option value="" data-es="Selecciona" data-en="Select" data-fr="Sélectionner">Selecciona</option>
-            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option>
-          </select>
-        </div>
-      </div>
-      <div>
-        <label for="mensaje" data-es="Mensaje" data-en="Message" data-fr="Message">Mensaje</label>
-        <textarea id="mensaje" name="mensaje"></textarea>
-      </div>
-      <input type="hidden" name="_subject" value="Nueva consulta — Pikera Uri Eco Lodge">
-      <button type="submit" class="form-submit" data-es="Enviar" data-en="Send" data-fr="Envoyer">Enviar</button>
-      <p class="form-note" data-es="Para reservas, te recomendamos usar el botón de reservas — recibirás confirmación inmediata." data-en="For bookings, we recommend using the booking button — you'll get instant confirmation." data-fr="Pour les réservations, nous recommandons d'utiliser le bouton de réservation — vous recevrez une confirmation immédiate.">Para reservas, te recomendamos usar el botón de reservas — recibirás confirmación inmediata.</p>
-      <p id="form-status"></p>
-    </form>
   </div>
 </section>
 
 <footer>
-  <a href="#top" class="brand footer-brand"><img src="img/logo.png" alt="" class="brand-mark brand-mark-lg">Pikera Uri</a>
-  <p data-es="Sector Tahai, Hanga Roa, Isla de Pascua (Rapa Nui), Chile · +56 9 8411 9080" data-en="Tahai sector, Hanga Roa, Easter Island (Rapa Nui), Chile · +56 9 8411 9080" data-fr="Secteur Tahai, Hanga Roa, Île de Pâques (Rapa Nui), Chili · +56 9 8411 9080">Sector Tahai, Hanga Roa, Isla de Pascua (Rapa Nui), Chile · +56 9 8411 9080</p>
-  <p><span data-es="© " data-en="© " data-fr="© ">© </span><span id="year"></span><span data-es=" Pikera Uri Eco Lodge. Todos los derechos reservados." data-en=" Pikera Uri Eco Lodge. All rights reserved." data-fr=" Pikera Uri Eco Lodge. Tous droits réservés."> Pikera Uri Eco Lodge. Todos los derechos reservados.</span></p>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="brand"><img src="img/logo.png" alt="Pikera Uri Eco Lodge"></a>
+        <p data-es="Pikera Uri Eco Lodge — habitaciones, jardines y cabalgatas a pasos de Tahai, en Hanga Roa, Isla de Pascua." data-en="Pikera Uri Eco Lodge — rooms, gardens and horseback rides steps from Tahai, in Hanga Roa, Easter Island." data-fr="Pikera Uri Eco Lodge — chambres, jardins et balades à cheval à deux pas de Tahai, à Hanga Roa, Île de Pâques.">Pikera Uri Eco Lodge — habitaciones, jardines y cabalgatas a pasos de Tahai, en Hanga Roa, Isla de Pascua.</p>
+        <p>+56 9 8411 9080</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5 data-es="Explorar" data-en="Explore" data-fr="Explorer">Explorar</h5>
+          <a href="#habitaciones" data-es="Habitaciones" data-en="Rooms" data-fr="Chambres">Habitaciones</a>
+          <a href="#experiencias" data-es="Experiencias" data-en="Experiences" data-fr="Expériences">Experiencias</a>
+          <a href="#galeria" data-es="Galería" data-en="Gallery" data-fr="Galerie">Galería</a>
+          <a href="#ubicacion" data-es="Reservar" data-en="Book Now" data-fr="Réserver">Reservar</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-es="Contacto" data-en="Contact" data-fr="Contact">Contacto</h5>
+          <a href="tel:+56984119080">+56 9 8411 9080</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Pikera+Uri+Eco+Lodge%2C+Hanga+Roa%2C+Isla+de+Pascua%2C+Chile" target="_blank" rel="noopener" data-es="Sector Tahai, Hanga Roa" data-en="Tahai sector, Hanga Roa" data-fr="Secteur Tahai, Hanga Roa">Sector Tahai, Hanga Roa</a>
+        </div>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/pikerauri/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+        <a href="https://www.facebook.com/people/Pik-Uri/100012678033386/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 3h-2a5 5 0 0 0-5 5v2H6v4h2v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span><span data-es="© " data-en="© " data-fr="© ">© </span><span id="year"></span><span data-es=" Pikera Uri Eco Lodge. Todos los derechos reservados." data-en=" Pikera Uri Eco Lodge. All rights reserved." data-fr=" Pikera Uri Eco Lodge. Tous droits réservés."> Pikera Uri Eco Lodge. Todos los derechos reservados.</span></span>
+    </div>
+  </div>
 </footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Header on scroll
-  const header = document.getElementById('site-header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 40);
-  });
 
   // Mobile nav
   const navToggle = document.getElementById('nav-toggle');
@@ -753,56 +521,58 @@
     navToggle.setAttribute('aria-expanded', 'false');
   }));
 
-  // Galería: filtro por categoría
-  const galleryTabs = document.querySelectorAll('.gallery-tab');
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  galleryTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      galleryTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const filter = tab.dataset.filter;
-      galleryItems.forEach(item => {
-        const show = filter === 'todas' || item.dataset.cat === filter;
-        item.classList.toggle('is-hidden', !show);
-      });
-    });
-  });
-
   // Selector de idioma ES/EN/FR (sitio completo)
   const langButtons = document.querySelectorAll('.lang-switch button');
   const i18nEls = document.querySelectorAll('[data-es]');
   function setLang(lang){
     document.documentElement.lang = lang;
-    langButtons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    langButtons.forEach(group => {});
+    document.querySelectorAll('.lang-switch button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
     i18nEls.forEach(el => {
       const text = el.dataset[lang] || el.dataset.es;
       if (text !== undefined) el.textContent = text;
     });
+    renderQuote();
   }
   langButtons.forEach(btn => btn.addEventListener('click', () => setLang(btn.dataset.lang)));
 
-  // Formulario de contacto -> Formspree (AJAX)
-  const form = document.getElementById('contact-form');
-  const status = document.getElementById('form-status');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    status.textContent = '...';
-    try{
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      if(res.ok){
-        status.textContent = '¡Gracias! Recibimos tu mensaje y te responderemos pronto.';
-        form.reset();
-      } else {
-        status.textContent = 'Hubo un problema al enviar. Intenta nuevamente o escríbenos por WhatsApp.';
-      }
-    } catch(err){
-      status.textContent = 'Hubo un problema al enviar. Intenta nuevamente o escríbenos por WhatsApp.';
-    }
+  // Carrusel de testimonios (manual, con flechas visibles)
+  const testimonials = [
+    { initials:'E', name:'ErikaCecil D.',
+      es:'«Desde el recibimiento en el aeropuerto con un collar de flores hasta el traslado de regreso tres días después, nuestra estadía en Pikera Uri fue excelente. La habitación es cómoda y el desayuno es realmente delicioso.»',
+      en:'“From the airport pickup with a flower necklace to the drop-off three days later, our stay at Pikera Uri was excellent. The room is comfortable and breakfast is really tasty.”',
+      fr:'« De l’accueil à l’aéroport avec un collier de fleurs jusqu’au retour trois jours plus tard, notre séjour à Pikera Uri a été excellent. La chambre est confortable et le petit-déjeuner est vraiment délicieux. »' },
+    { initials:'B', name:'Benjamin B.',
+      es:'«Gran personal, precios razonables, habitaciones cómodas y un gran desayuno. También arrendamos un auto con Pikera Uri y estaba en excelentes condiciones.»',
+      en:'“Great staff, reasonably priced, comfortable rooms and a great breakfast. We also rented a car from Pikera Uri and it was in great condition.”',
+      fr:'« Personnel formidable, prix raisonnables, chambres confortables et excellent petit-déjeuner. Nous avons aussi loué une voiture chez Pikera Uri, en parfait état. »' },
+    { initials:'G', name:'Glambert51',
+      es:'«Ubicación fantástica. Lo suficientemente cerca del pueblo para caminar. A 200 metros del sitio de Tahai. Vistas maravillosas al océano. Muy limpio y encantador.»',
+      en:'“Fantastic location. Close enough to town to walk. 200 meters from Tahai site. Wonderful ocean views. Very clean and very charming.”',
+      fr:'« Emplacement fantastique. Assez proche du village pour y aller à pied. À 200 mètres du site de Tahai. Vues magnifiques sur l’océan. Très propre et charmant. »' },
+    { initials:'A', name:'Adrielle S.',
+      es:'«Este eco lodge fue un lugar absolutamente maravilloso para alojarse en Rapa Nui. El alojamiento es hermoso, el personal muy hospitalario y la ubicación increíble.»',
+      en:'“This eco lodge was an absolutely wonderful place to stay on Rapa Nui. The accommodations were beautiful, the staff were so hospitable and the location is amazing.”',
+      fr:'« Cet éco-lodge était un endroit absolument merveilleux pour séjourner à Rapa Nui. L’hébergement est magnifique, le personnel très accueillant et l’emplacement incroyable. »' },
+  ];
+  let quoteIndex = 0;
+  function currentLang(){ return document.documentElement.lang || 'es'; }
+  function renderQuote(){
+    const t = testimonials[quoteIndex];
+    const lang = currentLang();
+    document.getElementById('quote-text').textContent = t[lang] || t.es;
+    document.getElementById('quote-avatar').textContent = t.initials;
+    document.getElementById('quote-name').textContent = t.name;
+  }
+  document.getElementById('quote-prev').addEventListener('click', () => {
+    quoteIndex = (quoteIndex - 1 + testimonials.length) % testimonials.length;
+    renderQuote();
   });
+  document.getElementById('quote-next').addEventListener('click', () => {
+    quoteIndex = (quoteIndex + 1) % testimonials.length;
+    renderQuote();
+  });
+  renderQuote();
 </script>
 
 </body>

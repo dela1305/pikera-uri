@@ -97,6 +97,16 @@
   .hero h1{ font-size:clamp(2.6rem, 5.4vw, 4.6rem); color:#fff; max-width:900px; margin:0 auto;}
   .hero p.lede{ color:rgba(255,255,255,0.88); max-width:560px; margin:22px auto 0; font-size:1.05rem;}
   .hero-actions{ margin-top:32px; display:flex; justify-content:center;}
+  .booking-bar{
+    display:flex; align-items:center; gap:4px; background:#fff; border-radius:999px; padding:6px;
+    flex-wrap:wrap; justify-content:center; box-shadow:0 20px 40px -16px rgba(0,0,0,0.35);
+  }
+  .booking-date{
+    border:none; background:transparent; font-family:var(--sans); font-size:0.88rem; color:var(--ink);
+    padding:9px 12px; border-radius:999px; outline:none; color-scheme:light;
+  }
+  .booking-date:focus{ background:var(--panel);}
+  .booking-sep{ color:var(--muted); font-size:0.85rem;}
   .float-cards{
     position:relative; margin-top:64px; display:grid; grid-template-columns:0.85fr 1.15fr; gap:20px; padding:0 40px 40px;
   }
@@ -246,7 +256,7 @@
         <button data-lang="en">EN</button>
         <button data-lang="fr">FR</button>
       </div>
-      <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-pill btn-pill--dark">
+      <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-pill btn-pill--dark booking-link">
         <span data-es="Reservar" data-en="Book Now" data-fr="Réserver">Reservar</span>
         <span class="pip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span>
       </a>
@@ -275,10 +285,15 @@
       <h1 data-es="El descanso empieza en Pikera Uri" data-en="Your stay starts at Pikera Uri" data-fr="Votre séjour commence à Pikera Uri">El descanso empieza en Pikera Uri</h1>
       <p class="lede" data-es="Habitaciones frente al Pacífico, jardines con flora nativa y cabalgatas propias — a pasos de Tahai, en el extremo más tranquilo de Rapa Nui." data-en="Rooms facing the Pacific, gardens full of native flora and our own horseback rides — steps from Tahai, in the quietest corner of Rapa Nui." data-fr="Des chambres face au Pacifique, des jardins de flore native et nos propres balades à cheval — à deux pas de Tahai, dans le coin le plus paisible de Rapa Nui.">Habitaciones frente al Pacífico, jardines con flora nativa y cabalgatas propias — a pasos de Tahai, en el extremo más tranquilo de Rapa Nui.</p>
       <div class="hero-actions">
-        <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-pill btn-pill--accent">
-          <span data-es="Reservar ahora" data-en="Book Now" data-fr="Réserver maintenant">Reservar ahora</span>
-          <span class="pip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span>
-        </a>
+        <div class="booking-bar">
+          <input type="date" id="hero-checkin" class="booking-date" aria-label="Check-in">
+          <span class="booking-sep">→</span>
+          <input type="date" id="hero-checkout" class="booking-date" aria-label="Check-out">
+          <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-pill btn-pill--accent booking-link">
+            <span data-es="Reservar ahora" data-en="Book Now" data-fr="Réserver maintenant">Reservar ahora</span>
+            <span class="pip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span>
+          </a>
+        </div>
       </div>
     </div>
     <div class="float-cards">
@@ -368,7 +383,7 @@
         <h2 data-es="Seis habitaciones, cada una distinta" data-en="Six rooms, each one different" data-fr="Six chambres, chacune différente">Seis habitaciones, cada una distinta</h2>
         <p data-es="Cada habitación tiene su propia decoración y estilo. Estamos preparando una ficha individual para cada una — mientras tanto, escríbenos y te contamos cuál se ajusta mejor a tu grupo." data-en="Each room has its own decor and style. We're preparing an individual page for each one — in the meantime, message us and we'll help you find the best fit." data-fr="Chaque chambre a sa propre décoration et son style. Nous préparons une fiche individuelle pour chacune — en attendant, écrivez-nous.">Cada habitación tiene su propia decoración y estilo. Estamos preparando una ficha individual para cada una — mientras tanto, escríbenos y te contamos cuál se ajusta mejor a tu grupo.</p>
       </div>
-      <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-pill btn-pill--accent">
+      <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-pill btn-pill--accent booking-link">
         <span data-es="Reservar ahora" data-en="Book Now" data-fr="Réserver maintenant">Reservar ahora</span>
         <span class="pip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span>
       </a>
@@ -460,7 +475,7 @@
       <h2 data-es="Reserva tu escapada en Rapa Nui" data-en="Book your Rapa Nui getaway" data-fr="Réservez votre escapade à Rapa Nui">Reserva tu escapada en Rapa Nui</h2>
       <p data-es="Sector Tahai, Hanga Roa — disponibilidad y pago en línea las 24 horas, con confirmación inmediata." data-en="Tahai sector, Hanga Roa — 24-hour online availability and payment, with instant confirmation." data-fr="Secteur Tahai, Hanga Roa — disponibilité et paiement en ligne 24h/24, confirmation immédiate.">Sector Tahai, Hanga Roa — disponibilidad y pago en línea las 24 horas, con confirmación inmediata.</p>
       <div class="cta-actions">
-        <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-pill btn-pill--accent">
+        <a href="https://us2.cloudbeds.com/reservation/PdqS68" target="_blank" rel="noopener" class="btn-pill btn-pill--accent booking-link">
           <span data-es="Reservar y pagar" data-en="Book & Pay" data-fr="Réserver et payer">Reservar y pagar</span>
           <span class="pip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h12M11 5l5 5-5 5"/></svg></span>
         </a>
@@ -573,6 +588,32 @@
     renderQuote();
   });
   renderQuote();
+
+  // Reserva con fechas: precarga check-in/check-out en el link de Cloudbeds
+  const BOOKING_URL = 'https://us2.cloudbeds.com/reservation/PdqS68';
+  const ciInput = document.getElementById('hero-checkin');
+  const coInput = document.getElementById('hero-checkout');
+  const bookingLinks = document.querySelectorAll('.booking-link');
+  function isoDate(d){ return d.toISOString().slice(0, 10); }
+  function addDays(iso, n){ const d = new Date(iso + 'T00:00:00'); d.setDate(d.getDate() + n); return isoDate(d); }
+  function updateBookingLinks(){
+    const ci = ciInput.value, co = coInput.value;
+    const url = (ci && co) ? `${BOOKING_URL}?#checkin=${ci}&checkout=${co}` : BOOKING_URL;
+    bookingLinks.forEach(a => { a.href = url; });
+  }
+  if (ciInput && coInput) {
+    const today = isoDate(new Date());
+    ciInput.min = today;
+    coInput.min = addDays(today, 1);
+    ciInput.addEventListener('change', () => {
+      if (ciInput.value) {
+        coInput.min = addDays(ciInput.value, 1);
+        if (coInput.value && coInput.value <= ciInput.value) coInput.value = addDays(ciInput.value, 1);
+      }
+      updateBookingLinks();
+    });
+    coInput.addEventListener('change', updateBookingLinks);
+  }
 </script>
 
 </body>
